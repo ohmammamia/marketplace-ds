@@ -1,0 +1,12 @@
+data_dir: data/synthetic
+output_dir: outputs/project2
+min_tokens: 3
+topic_ks: [4, 6, 8, 10, 12]
+n_topics: 8
+abstain_below: 0.5
+review_sample_size: 250
+holdout_size: 150
+recent_weeks: 4
+baseline_weeks: 12
+ratio_threshold: 1.5
+alpha: 0.05

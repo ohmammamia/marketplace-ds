@@ -1,0 +1,9 @@
+category,recent_count,baseline_count,expected_recent,rate_ratio,p_value,emerging
+credits_refund,41,35,15.0,2.67,0.0,True
+lead_quality,38,60,25.6,1.47,0.013,False
+price_dispute,26,64,27.3,0.95,0.6249,False
+provider_no_show,25,62,26.5,0.95,0.6383,False
+provider_communication,21,54,23.1,0.91,0.6955,False
+safety_issue,9,27,11.6,0.78,0.8203,False
+workmanship_quality,34,117,49.8,0.69,0.9924,False
+app_bug,30,106,45.1,0.67,0.9929,False

@@ -1,0 +1,9 @@
+category,share,confidence,rate_ratio,emerging,severity,growth,priority,rank
+credits_refund,0.183,0.872,2.67,True,4,2.67,1.704,1
+lead_quality,0.17,0.823,1.47,False,3,1.47,0.616,2
+price_dispute,0.116,0.796,0.95,False,4,1.0,0.369,3
+provider_no_show,0.112,0.788,0.95,False,4,1.0,0.352,4
+app_bug,0.134,0.712,0.67,False,3,1.0,0.286,5
+workmanship_quality,0.152,0.851,0.69,False,2,1.0,0.258,6
+provider_communication,0.094,0.814,0.91,False,3,1.0,0.229,7
+safety_issue,0.04,0.853,0.78,False,5,1.0,0.171,8

@@ -1,0 +1,10 @@
+name,passed,severity,detail
+dtype:feedback_id,True,warning,"expected object, got object"
+dtype:created_at,True,warning,"expected datetime, got datetime64[ns]"
+dtype:author_type,True,warning,"expected object, got object"
+dtype:channel,True,warning,"expected object, got object"
+dtype:text,True,warning,"expected object, got object"
+unique_key,False,error,60 duplicated feedback_id
+missing:text,True,warning,1.5% missing (allowed 5%)
+categories:author_type,True,warning,unexpected: []
+categories:channel,True,warning,unexpected: []

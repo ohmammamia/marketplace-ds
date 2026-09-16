@@ -1,0 +1,14 @@
+data_dir: data/synthetic
+output_dir: outputs/project3
+p1_model_path: outputs/project1/model_logreg.joblib
+week_start: "2026-01-19"       # a peak week in the demo data
+M: 3
+weights: {unfilled: 1.0, fairness: 0.3, distance: 0.1}
+scenarios:
+  - {name: baseline}
+  - {name: demand_plus_10, demand_scale: 1.10}
+  - {name: demand_plus_25, demand_scale: 1.25}
+  - {name: capacity_minus_10, capacity_scale: 0.90}
+  - {name: capacity_minus_25, capacity_scale: 0.75}
+  - {name: max_distance_5km, max_distance: 5.0}
+  - {name: quiet_week, week_start: "2025-11-10"}

@@ -1,0 +1,80 @@
+name,passed,severity,detail,dataset
+dtype:provider_id,True,warning,"expected object, got object",providers_raw
+dtype:home_zone,True,warning,"expected object, got object",providers_raw
+dtype:coverage,True,warning,"expected object, got object",providers_raw
+dtype:job_type,True,warning,"expected object, got object",providers_raw
+dtype:price_per_hour,True,warning,"expected float, got float64",providers_raw
+dtype:tier,True,warning,"expected object, got object",providers_raw
+dtype:years_experience,True,warning,"expected integer, got int64",providers_raw
+dtype:gender,True,warning,"expected object, got object",providers_raw
+dtype:weekly_lead_capacity,True,warning,"expected integer, got int64",providers_raw
+dtype:rating,True,warning,"expected float, got float64",providers_raw
+dtype:credit_balance,True,warning,"expected integer, got int64",providers_raw
+unique_key,True,error,0 duplicated provider_id,providers_raw
+missing:rating,True,warning,6.2% missing (allowed 10%),providers_raw
+missing:price_per_hour,True,warning,4.9% missing (allowed 10%),providers_raw
+range:price_per_hour,True,error,"0 values outside [15, 80]",providers_raw
+range:rating,True,error,"0 values outside [1, 5]",providers_raw
+range:years_experience,True,error,"0 values outside [0, 50]",providers_raw
+range:weekly_lead_capacity,True,error,"0 values outside [0, 20]",providers_raw
+categories:job_type,False,warning,unexpected: ['REPAIR'],providers_raw
+categories:tier,True,warning,unexpected: [],providers_raw
+dtype:lead_id,True,warning,"expected object, got object",leads_raw
+dtype:created_at,True,warning,"expected datetime, got datetime64[ns]",leads_raw
+dtype:zone,True,warning,"expected object, got object",leads_raw
+dtype:job_type,True,warning,"expected object, got object",leads_raw
+dtype:budget_max,True,warning,"expected float, got float64",leads_raw
+dtype:urgency,True,warning,"expected object, got object",leads_raw
+dtype:hours_wanted,True,warning,"expected integer, got int64",leads_raw
+unique_key,True,error,0 duplicated lead_id,leads_raw
+missing:budget_max,True,warning,5.5% missing (allowed 10%),leads_raw
+range:budget_max,True,error,"0 values outside [10, 100]",leads_raw
+range:hours_wanted,True,error,"0 values outside [1, 100]",leads_raw
+categories:job_type,True,warning,unexpected: [],leads_raw
+categories:urgency,True,warning,unexpected: [],leads_raw
+dtype:lead_id,True,warning,"expected object, got object",offers_raw
+dtype:provider_id,True,warning,"expected object, got object",offers_raw
+dtype:offered_at,True,warning,"expected datetime, got datetime64[ns]",offers_raw
+dtype:rank_shown,True,warning,"expected integer, got int64",offers_raw
+dtype:purchased,True,warning,"expected integer, got int64",offers_raw
+dtype:contacted,True,warning,"expected integer, got int64",offers_raw
+dtype:converted,True,warning,"expected integer, got int64",offers_raw
+range:rank_shown,True,error,"0 values outside [1, 20]",offers_raw
+range:purchased,True,error,"0 values outside [0, 1]",offers_raw
+range:contacted,True,error,"0 values outside [0, 1]",offers_raw
+range:converted,True,error,"0 values outside [0, 1]",offers_raw
+referential:provider_id,False,error,3 orphan rows,offers_raw
+referential:lead_id,True,error,0 orphan rows,offers_raw
+dtype:provider_id,True,warning,"expected object, got object",providers_clean
+dtype:home_zone,True,warning,"expected object, got object",providers_clean
+dtype:coverage,True,warning,"expected object, got object",providers_clean
+dtype:job_type,True,warning,"expected object, got object",providers_clean
+dtype:price_per_hour,True,warning,"expected float, got float64",providers_clean
+dtype:tier,True,warning,"expected object, got object",providers_clean
+dtype:years_experience,True,warning,"expected integer, got int64",providers_clean
+dtype:gender,True,warning,"expected object, got object",providers_clean
+dtype:weekly_lead_capacity,True,warning,"expected integer, got int64",providers_clean
+dtype:rating,True,warning,"expected float, got float64",providers_clean
+dtype:credit_balance,True,warning,"expected integer, got int64",providers_clean
+unique_key,True,error,0 duplicated provider_id,providers_clean
+missing:rating,True,warning,5.9% missing (allowed 10%),providers_clean
+missing:price_per_hour,True,warning,5.0% missing (allowed 10%),providers_clean
+range:price_per_hour,True,error,"0 values outside [15, 80]",providers_clean
+range:rating,True,error,"0 values outside [1, 5]",providers_clean
+range:years_experience,True,error,"0 values outside [0, 50]",providers_clean
+range:weekly_lead_capacity,True,error,"0 values outside [0, 20]",providers_clean
+categories:job_type,True,warning,unexpected: [],providers_clean
+categories:tier,True,warning,unexpected: [],providers_clean
+dtype:lead_id,True,warning,"expected object, got object",offers_clean
+dtype:provider_id,True,warning,"expected object, got object",offers_clean
+dtype:offered_at,True,warning,"expected datetime, got datetime64[ns]",offers_clean
+dtype:rank_shown,True,warning,"expected integer, got int64",offers_clean
+dtype:purchased,True,warning,"expected integer, got int64",offers_clean
+dtype:contacted,True,warning,"expected integer, got int64",offers_clean
+dtype:converted,True,warning,"expected integer, got int64",offers_clean
+range:rank_shown,True,error,"0 values outside [1, 20]",offers_clean
+range:purchased,True,error,"0 values outside [0, 1]",offers_clean
+range:contacted,True,error,"0 values outside [0, 1]",offers_clean
+range:converted,True,error,"0 values outside [0, 1]",offers_clean
+referential:provider_id,True,error,0 orphan rows,offers_clean
+referential:lead_id,True,error,0 orphan rows,offers_clean

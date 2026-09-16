@@ -1,0 +1,582 @@
+{
+  "validation": {
+    "errors": 1,
+    "warnings": 0
+  },
+  "quality": {
+    "n_input": 1560,
+    "n_kept": 1322,
+    "exclusions": {
+      "exact_duplicate": 168,
+      "too_short": 37,
+      "empty": 23,
+      "non_english": 10
+    },
+    "median_tokens_kept": 16.0
+  },
+  "privacy": {
+    "n_docs": 1322,
+    "share_docs_with_pii": 0.18608169440242056,
+    "entities_by_type": {
+      "EMAIL": 50,
+      "POSTCODE": 62,
+      "PHONE": 117,
+      "NAME": 28
+    }
+  },
+  "exploration": {
+    "n_docs": 1322,
+    "by_author": {
+      "customer": 707,
+      "provider": 615
+    },
+    "by_channel": {
+      "review": 562,
+      "support": 501,
+      "survey": 259
+    },
+    "tokens_p50_p90": [
+      16.0,
+      21.0
+    ],
+    "weekly_volume": {
+      "2025-09-01/2025-09-07": 52,
+      "2025-09-08/2025-09-14": 66,
+      "2025-09-15/2025-09-21": 49,
+      "2025-09-22/2025-09-28": 38,
+      "2025-09-29/2025-10-05": 43,
+      "2025-10-06/2025-10-12": 47,
+      "2025-10-13/2025-10-19": 47,
+      "2025-10-20/2025-10-26": 55,
+      "2025-10-27/2025-11-02": 53,
+      "2025-11-03/2025-11-09": 58,
+      "2025-11-10/2025-11-16": 50,
+      "2025-11-17/2025-11-23": 45,
+      "2025-11-24/2025-11-30": 40,
+      "2025-12-01/2025-12-07": 40,
+      "2025-12-08/2025-12-14": 55,
+      "2025-12-15/2025-12-21": 57,
+      "2025-12-22/2025-12-28": 42,
+      "2025-12-29/2026-01-04": 44,
+      "2026-01-05/2026-01-11": 57,
+      "2026-01-12/2026-01-18": 54,
+      "2026-01-19/2026-01-25": 43,
+      "2026-01-26/2026-02-01": 52,
+      "2026-02-02/2026-02-08": 62,
+      "2026-02-09/2026-02-15": 62,
+      "2026-02-16/2026-02-22": 53,
+      "2026-02-23/2026-03-01": 58
+    }
+  },
+  "discovery": {
+    "k_selection": [
+      {
+        "k": 4,
+        "coherence": 2.606,
+        "stability": 0.655
+      },
+      {
+        "k": 6,
+        "coherence": 3.031,
+        "stability": 1.0
+      },
+      {
+        "k": 8,
+        "coherence": 2.977,
+        "stability": 0.548
+      },
+      {
+        "k": 10,
+        "coherence": 3.204,
+        "stability": 0.551
+      },
+      {
+        "k": 12,
+        "coherence": 3.096,
+        "stability": 0.583
+      }
+    ],
+    "topics": [
+      {
+        "topic": 0,
+        "top_terms": "time, happened, didn, time happened, second, second time, hour, just",
+        "mapped_category": "provider_no_show",
+        "overlap": 1,
+        "doc_share": 0.489
+      },
+      {
+        "topic": 1,
+        "top_terms": "way actually, actually makes, worth, things, explains, explains things, makes, makes sense",
+        "mapped_category": "workmanship_quality",
+        "overlap": 1,
+        "doc_share": 0.039
+      },
+      {
+        "topic": 2,
+        "top_terms": "explained, finished, ahead time, finished ahead, really thorough, clearly finished, explained clearly, clearly",
+        "mapped_category": "workmanship_quality",
+        "overlap": 2,
+        "doc_share": 0.073
+      },
+      {
+        "topic": 3,
+        "top_terms": "availability calendar, changes close, calendar, calendar doesn, close, doesn, doesn changes, changes",
+        "mapped_category": "NEW/uncovered",
+        "overlap": 0,
+        "doc_share": 0.023
+      },
+      {
+        "topic": 4,
+        "top_terms": "android keeps, keeps sending, screen, start, loop android, loop, login loop, login",
+        "mapped_category": "NEW/uncovered",
+        "overlap": 0,
+        "doc_share": 0.023
+      },
+      {
+        "topic": 5,
+        "top_terms": "zones save, update coverage, greyed, zones, coverage zones, coverage, save, save button",
+        "mapped_category": "app_bug",
+        "overlap": 3,
+        "doc_share": 0.061
+      },
+      {
+        "topic": 6,
+        "top_terms": "lead, paid, paid lead, lead apparently, apparently heard, apparently, heard, disconnected",
+        "mapped_category": "lead_quality",
+        "overlap": 2,
+        "doc_share": 0.091
+      },
+      {
+        "topic": 7,
+        "top_terms": "twice, filled, site, customer, filled details, heard site, details, details twice",
+        "mapped_category": "lead_quality",
+        "overlap": 1,
+        "doc_share": 0.2
+      }
+    ]
+  },
+  "rule_baseline_unassigned_share": 0.2291981845688351,
+  "categorisation": {
+    "holdout_size": 150,
+    "reviewed_train_size": 250,
+    "rule_baseline": {
+      "macro_f1": 0.7554677625242141,
+      "coverage": 0.7333333333333333,
+      "agreement": 0.7727272727272727,
+      "per_class_f1": {
+        "provider_no_show": 0.636,
+        "provider_communication": 0.968,
+        "price_dispute": 0.889,
+        "workmanship_quality": 0.857,
+        "safety_issue": 0.923,
+        "lead_quality": 0.839,
+        "credits_refund": 0.75,
+        "app_bug": 0.182
+      }
+    },
+    "model_weak_labels_only": {
+      "macro_f1": 0.721490450885627,
+      "coverage": 0.8733333333333333,
+      "agreement": 0.6870229007633588,
+      "per_class_f1": {
+        "provider_no_show": 0.636,
+        "provider_communication": 0.857,
+        "price_dispute": 0.828,
+        "workmanship_quality": 0.766,
+        "safety_issue": 0.923,
+        "lead_quality": 0.743,
+        "credits_refund": 0.727,
+        "app_bug": 0.292
+      }
+    },
+    "model_weak_plus_reviewed": {
+      "macro_f1": 0.87239882860152,
+      "coverage": 0.94,
+      "agreement": 0.8723404255319149,
+      "per_class_f1": {
+        "provider_no_show": 0.829,
+        "provider_communication": 1.0,
+        "price_dispute": 0.933,
+        "workmanship_quality": 0.931,
+        "safety_issue": 1.0,
+        "lead_quality": 0.865,
+        "credits_refund": 0.8,
+        "app_bug": 0.621
+      }
+    },
+    "needs_review_share_all": 0.07110438729198185
+  },
+  "emerging": [
+    {
+      "category": "credits_refund",
+      "recent_count": 41,
+      "baseline_count": 35,
+      "expected_recent": 15.0,
+      "rate_ratio": 2.67,
+      "p_value": 0.0,
+      "emerging": true
+    },
+    {
+      "category": "lead_quality",
+      "recent_count": 38,
+      "baseline_count": 60,
+      "expected_recent": 25.6,
+      "rate_ratio": 1.47,
+      "p_value": 0.013,
+      "emerging": false
+    },
+    {
+      "category": "price_dispute",
+      "recent_count": 26,
+      "baseline_count": 64,
+      "expected_recent": 27.3,
+      "rate_ratio": 0.95,
+      "p_value": 0.6249,
+      "emerging": false
+    },
+    {
+      "category": "provider_no_show",
+      "recent_count": 25,
+      "baseline_count": 62,
+      "expected_recent": 26.5,
+      "rate_ratio": 0.95,
+      "p_value": 0.6383,
+      "emerging": false
+    },
+    {
+      "category": "provider_communication",
+      "recent_count": 21,
+      "baseline_count": 54,
+      "expected_recent": 23.1,
+      "rate_ratio": 0.91,
+      "p_value": 0.6955,
+      "emerging": false
+    },
+    {
+      "category": "safety_issue",
+      "recent_count": 9,
+      "baseline_count": 27,
+      "expected_recent": 11.6,
+      "rate_ratio": 0.78,
+      "p_value": 0.8203,
+      "emerging": false
+    },
+    {
+      "category": "workmanship_quality",
+      "recent_count": 34,
+      "baseline_count": 117,
+      "expected_recent": 49.8,
+      "rate_ratio": 0.69,
+      "p_value": 0.9924,
+      "emerging": false
+    },
+    {
+      "category": "app_bug",
+      "recent_count": 30,
+      "baseline_count": 106,
+      "expected_recent": 45.1,
+      "rate_ratio": 0.67,
+      "p_value": 0.9929,
+      "emerging": false
+    }
+  ],
+  "priorities": [
+    {
+      "category": "credits_refund",
+      "share": 0.183,
+      "confidence": 0.872,
+      "rate_ratio": 2.67,
+      "emerging": true,
+      "severity": 4,
+      "growth": 2.67,
+      "priority": 1.704,
+      "rank": 1,
+      "owner": "finance ops",
+      "action": "refund SLA / bug ticket"
+    },
+    {
+      "category": "lead_quality",
+      "share": 0.17,
+      "confidence": 0.823,
+      "rate_ratio": 1.47,
+      "emerging": false,
+      "severity": 3,
+      "growth": 1.47,
+      "priority": 0.616,
+      "rank": 2,
+      "owner": "demand ops",
+      "action": "lead validation rules"
+    },
+    {
+      "category": "price_dispute",
+      "share": 0.116,
+      "confidence": 0.796,
+      "rate_ratio": 0.95,
+      "emerging": false,
+      "severity": 4,
+      "growth": 1.0,
+      "priority": 0.369,
+      "rank": 3,
+      "owner": "trust & safety",
+      "action": "profile price audit"
+    },
+    {
+      "category": "provider_no_show",
+      "share": 0.112,
+      "confidence": 0.788,
+      "rate_ratio": 0.95,
+      "emerging": false,
+      "severity": 4,
+      "growth": 1.0,
+      "priority": 0.352,
+      "rank": 4,
+      "owner": "supply ops",
+      "action": "warn / suspend provider"
+    },
+    {
+      "category": "app_bug",
+      "share": 0.134,
+      "confidence": 0.712,
+      "rate_ratio": 0.67,
+      "emerging": false,
+      "severity": 3,
+      "growth": 1.0,
+      "priority": 0.286,
+      "rank": 5,
+      "owner": "engineering",
+      "action": "bug ticket"
+    },
+    {
+      "category": "workmanship_quality",
+      "share": 0.152,
+      "confidence": 0.851,
+      "rate_ratio": 0.69,
+      "emerging": false,
+      "severity": 2,
+      "growth": 1.0,
+      "priority": 0.258,
+      "rank": 6,
+      "owner": "product",
+      "action": "surface in ratings"
+    },
+    {
+      "category": "provider_communication",
+      "share": 0.094,
+      "confidence": 0.814,
+      "rate_ratio": 0.91,
+      "emerging": false,
+      "severity": 3,
+      "growth": 1.0,
+      "priority": 0.229,
+      "rank": 7,
+      "owner": "supply ops",
+      "action": "nudge provider, auto-refund lead"
+    },
+    {
+      "category": "safety_issue",
+      "share": 0.04,
+      "confidence": 0.853,
+      "rate_ratio": 0.78,
+      "emerging": false,
+      "severity": 5,
+      "growth": 1.0,
+      "priority": 0.171,
+      "rank": 8,
+      "owner": "trust & safety",
+      "action": "site safety check"
+    }
+  ],
+  "explanations": {
+    "app_bug": {
+      "key_terms": [
+        "happy",
+        "not happy",
+        "my",
+        "the last",
+        "happened",
+        "is",
+        "update my",
+        "would appreciate"
+      ],
+      "examples_redacted": [
+        "not happy. can't update my coverage zones, the save button is greyed out would appreciate a reply",
+        "Can't update my coverage zones, the save button is greyed out Second time this has happened",
+        "Not happy. The app crashes every time I open the leads tab"
+      ],
+      "mean_confidence": 0.7726382999921342
+    },
+    "credits_refund": {
+      "key_terms": [
+        "refund",
+        "nothing",
+        "credits",
+        "lead never",
+        "never accepted",
+        "accepted",
+        "please refund",
+        "charged for"
+      ],
+      "examples_redacted": [
+        "Two refunds approved by email but nothing showing in the account",
+        "credits not refunded after the customer cancelled, support not replying",
+        "Two refunds approved by email but nothing showing in the account Otherwise fine"
+      ],
+      "mean_confidence": 0.87335710926525
+    },
+    "lead_quality": {
+      "key_terms": [
+        "customer",
+        "only",
+        "sent to",
+        "to me",
+        "lead",
+        "they",
+        "someone",
+        "number was"
+      ],
+      "examples_redacted": [
+        "Customers keep saying they already found someone by the time I call",
+        "customers keep saying they already found someone by the time i call not impressed",
+        "Customers keep saying they already found someone by the time I call Otherwise fine"
+      ],
+      "mean_confidence": 0.8366045571489883
+    },
+    "price_dispute": {
+      "key_terms": [
+        "hour",
+        "charged",
+        "price",
+        "twice",
+        "came in",
+        "hour invoice",
+        "invoice came",
+        "in at"
+      ],
+      "examples_redacted": [
+        "Quoted one price then asked for more once the work started",
+        "Was told \u00a337 an hour, invoice came in at \u00a345, no explanation",
+        "was told \u00a338 an hour, invoice came in at \u00a345, no explanation"
+      ],
+      "mean_confidence": 0.7922040100913906
+    },
+    "provider_communication": {
+      "key_terms": [
+        "but never",
+        "filled in",
+        "heard",
+        "messages no",
+        "messages",
+        "no reply",
+        "for week",
+        "sent three"
+      ],
+      "examples_redacted": [
+        "Paid for the lead apparently but I never heard from anyone Cheers",
+        "Paid for the lead apparently but I never heard from anyone",
+        "Nobody got in touch after I filled in the form"
+      ],
+      "mean_confidence": 0.8456029316696175
+    },
+    "provider_no_show": {
+      "key_terms": [
+        "late",
+        "morning",
+        "unreliable",
+        "really unreliable",
+        "on me",
+        "minute really",
+        "cancelled on",
+        "twice last"
+      ],
+      "examples_redacted": [
+        "Cancelled on me twice last minute, really unreliable",
+        "Update - Cancelled on me twice last minute, really unreliable",
+        "So Booked a morning slot, waited 40 minutes, nobody came. No explanation Thanks"
+      ],
+      "mean_confidence": 0.7918266843058971
+    },
+    "safety_issue": {
+      "key_terms": [
+        "left",
+        "it",
+        "he",
+        "the boiler",
+        "told to",
+        "warning light",
+        "ignore",
+        "time was"
+      ],
+      "examples_redacted": [
+        "update - warning light on the boiler the whole time, was told to ignore it",
+        "fyi warning light on the boiler the whole time, was told to ignore it thanks",
+        "the ladder he used was visibly damaged, i mentioned it and got shrugged at thanks"
+      ],
+      "mean_confidence": 0.8904533743879819
+    },
+    "workmanship_quality": {
+      "key_terms": [
+        "explained",
+        "finished",
+        "of",
+        "visit",
+        "every",
+        "at",
+        "tidy",
+        "methodical"
+      ],
+      "examples_redacted": [
+        "explains things in a way that actually makes sense, worth every penny",
+        "Update - Explains things in a way that actually makes sense, worth every penny",
+        "Really thorough, explained the whole job clearly and finished ahead of time!"
+      ],
+      "mean_confidence": 0.8519169703339848
+    }
+  },
+  "monitoring_category_drift": {
+    "credits_refund": {
+      "reference_share": 0.053,
+      "current_share": 0.103,
+      "contribution": 0.034
+    },
+    "app_bug": {
+      "reference_share": 0.218,
+      "current_share": 0.149,
+      "contribution": 0.027
+    },
+    "safety_issue": {
+      "reference_share": 0.068,
+      "current_share": 0.047,
+      "contribution": 0.007
+    },
+    "lead_quality": {
+      "reference_share": 0.099,
+      "current_share": 0.125,
+      "contribution": 0.006
+    },
+    "needs_review": {
+      "reference_share": 0.063,
+      "current_share": 0.079,
+      "contribution": 0.004
+    },
+    "provider_no_show": {
+      "reference_share": 0.115,
+      "current_share": 0.105,
+      "contribution": 0.001
+    },
+    "workmanship_quality": {
+      "reference_share": 0.17,
+      "current_share": 0.179,
+      "contribution": 0.0
+    },
+    "price_dispute": {
+      "reference_share": 0.127,
+      "current_share": 0.12,
+      "contribution": 0.0
+    },
+    "provider_communication": {
+      "reference_share": 0.087,
+      "current_share": 0.093,
+      "contribution": 0.0
+    }
+  }
+}

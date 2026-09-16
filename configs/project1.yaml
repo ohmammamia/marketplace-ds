@@ -1,0 +1,10 @@
+data_dir: data/synthetic
+output_dir: outputs/project1
+target: purchased
+k: 3
+test_frac: 0.25
+candidate_max_distance_km: 8.0
+scenarios:
+  capacity_scales: [1.0, 0.9, 0.75]
+  demand_scales: [1.0, 1.1, 1.25]
+  ks: [2, 3, 4]

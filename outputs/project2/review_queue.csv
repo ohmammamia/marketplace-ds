@@ -1,0 +1,95 @@
+feedback_id,created_at,channel,text_redacted,confidence
+F00006,2026-02-19,survey,"My balance went down by 11 and I didn't buy anything, what happened Please sort it out",0.495783525399191
+F00018,2025-10-14,support,Asked for cash up front for the full job then said the rate had gone up Would appreciate a reply,0.4196069849959341
+F00039,2025-12-03,review,"Honestly, Requested a refund for a dead lead 2 weeks ago, still nothing Please sort it out",0.4641993721170294
+F00066,2026-01-08,support,fyi asked for cash up front for the full job then said the rate had gone up would appreciate a reply,0.41774974047724556
+F00070,2025-12-17,review,feedback: asked for cash up front for the full job then said the rate had gone up would appreciate a reply,0.41204260743073534
+F00074,2026-02-07,support,feedback: would be nice to actually get a response from the person i was matched with thanks,0.44764923477190843
+F00088,2025-10-23,survey,FYI Notifications arrive hours late so I miss leads Been using the site since October,0.46326395108796886
+F00113,2025-12-29,review,"FYI Left me waiting at the property in Z20 all morning, no message nothing Otherwise fine",0.4801137932614615
+F00124,2025-12-28,review,"Just to say Still waiting for someone to call me back, it's been 14 days Otherwise fine",0.4150076525327296
+F00143,2025-09-17,review,"FYI Still waiting for someone to call me back, it's been 3 days Cheers",0.47108645030685287
+F00146,2026-01-16,review,"So Still waiting for someone to call me back, it's been 5 days I live near [POSTCODE]",0.3974235269500168
+F00152,2026-01-20,support,"just to say still waiting for someone to call me back, it's been 7 days my number is [PHONE]",0.4389469872265419
+F00156,2026-02-28,review,So Third enquiry this week where the person says they never filled anything in Otherwise fine my number is [PHONE],0.4397872297273076
+F00177,2026-01-27,survey,"So Site left spotless and every connection checked, felt genuinely professional Second time this has happened",0.46641864425000507
+F00197,2026-02-01,survey,"Just to say Still waiting for someone to call me back, it's been 6 days Please sort it out",0.461186753050222
+F00226,2025-10-01,support,"quick one: site left spotless and every connection checked, felt genuinely professional second time this has happened",0.46153918855494896
+F00252,2025-11-03,review,"not happy. filled in my details twice and heard nothing, is this site even active",0.46936748390097965
+F00255,2025-12-03,review,"update - still waiting for someone to call me back, it's been 12 days not impressed",0.3528680588762342
+F00268,2025-12-09,review,"Honestly, Third enquiry this week where the person says they never filled anything in",0.4484293730320726
+F00284,2025-11-29,support,"Getting enquiries from people who want work in three months, not now This was in Z21",0.44963961341850733
+F00296,2025-09-12,support,"still waiting for someone to call me back, it's been 7 days cheers",0.46639482204689364
+F00314,2025-11-28,review,fyi the multi-day discount on the profile turned out not to exist been using the site since december email me at [EMAIL],0.4758407818393353
+F00392,2025-12-17,support,"Still waiting for someone to call me back, it's been 10 days Otherwise fine",0.40290652725357373
+F00395,2025-09-09,survey,Feedback: Would be nice to actually get a response from the person I was matched with Otherwise fine,0.4721301800685471
+F00399,2025-09-09,review,"still waiting for someone to call me back, it's been 14 days cheers",0.39672517536389734
+F00406,2025-09-01,review,"Feedback: My balance went down by 4 and I didn't buy anything, what happened Been using the site since January I live near [POSTCODE]",0.45089537199746393
+F00417,2025-11-10,review,Feedback: Third enquiry this week where the person says they never filled anything in Been using the site since January,0.4997668604840842
+F00427,2025-12-29,support,"honestly, still waiting for someone to call me back, it's been 4 days please sort it out my number is [PHONE]",0.4526756517768099
+F00458,2026-02-20,review,"just to say still waiting for someone to call me back, it's been 7 days not impressed",0.44145651853288015
+F00494,2026-01-02,survey,Feedback: Would be nice to actually get a response from the person I was matched with Second time this has happened,0.4969142908234796
+F00529,2026-02-06,support,"fyi got one text and then silence, no idea if i have a tradesperson or not would appreciate a reply email me at [EMAIL]",0.37810483946256
+F00569,2025-10-16,support,"Feedback: Filled in my details twice and heard nothing, is this site even active Second time this has happened",0.4986071336980311
+F00590,2026-01-18,support,"so getting enquiries from people who want work in three months, not now been using the site since september",0.44852687438919664
+F00600,2026-01-05,support,"not happy. getting enquiries from people who want work in three months, not now",0.48984919890037293
+F00601,2025-09-16,review,"Hi, The multi-day discount on the profile turned out not to exist Cheers",0.41261030834136253
+F00610,2025-10-14,support,"Not happy. Still waiting for someone to call me back, it's been 9 days Been using the site since January my number is [PHONE]",0.44251996707949315
+F00612,2025-12-14,review,"FYI Was promised my money back for the fake enquiry, 10 days later still waiting Second time this has happened I live near [POSTCODE]",0.4830841984576384
+F00614,2026-02-01,review,"Not happy. Requested a refund for a dead lead 2 weeks ago, still nothing Second time this has happened",0.4960935731869747
+F00626,2025-12-19,review,"Just to say Still waiting for someone to call me back, it's been 6 days Cheers",0.49273700019069705
+F00629,2026-02-23,support,"Quick one: My balance went down by 14 and I didn't buy anything, what happened",0.4762579104761874
+F00647,2025-09-04,support,Would be nice to actually get a response from the person I was matched with Otherwise fine,0.4651524162665326
+F00655,2026-01-16,review,Not happy. Would be nice to actually get a response from the person I was matched with I live near [POSTCODE],0.4889728233561245
+F00657,2026-02-01,review,"Quick one: Requested a refund for a dead lead 2 weeks ago, still nothing Second time this has happened",0.48522043435801815
+F00665,2025-12-26,support,The multi-day discount on the profile turned out not to exist Been using the site since November,0.4913786933035704
+F00668,2025-11-12,survey,"Update - Getting enquiries from people who want work in three months, not now Please sort it out",0.4458208125223427
+F00687,2025-09-17,review,Third enquiry this week where the person says they never filled anything in Cheers,0.47254877291619213
+F00697,2025-12-15,review,"so still waiting for someone to call me back, it's been 12 days cheers",0.38965844369037045
+F00727,2025-12-21,review,just to say would be nice to actually get a response from the person i was matched with second time this has happened,0.43738594179855766
+F00733,2026-01-12,support,the multi-day discount on the profile turned out not to exist not impressed,0.38372785033965784
+F00745,2025-09-11,support,"Not happy. Filled in my details twice and heard nothing, is this site even active Please sort it out",0.42242778779854234
+F00746,2026-01-24,survey,"Honestly, Top up went through on my card but the balance didn't change Would appreciate a reply",0.4462890609575517
+F00753,2025-11-13,review,"Feedback: Getting enquiries from people who want work in three months, not now Thanks my number is [PHONE]",0.4629601997352088
+F00782,2026-01-17,support,FYI Notifications arrive hours late so I miss leads This was in Z26,0.482940761894413
+F00795,2025-10-04,review,just to say the multi-day discount on the profile turned out not to exist,0.4452015464716876
+F00796,2025-09-06,support,Quick one: The multi-day discount on the profile turned out not to exist This was in Z28,0.46177013133885864
+F00802,2026-01-02,review,"Update - Still waiting for someone to call me back, it's been 2 days",0.3574780661409075
+F00825,2025-09-07,review,"Not happy. Got one text and then silence, no idea if I have a tradesperson or not This was in Z12",0.44592047964638726
+F00829,2025-10-04,survey,Just to say Third enquiry this week where the person says they never filled anything in Please sort it out,0.49288244711594914
+F00900,2026-02-04,support,Third enquiry this week where the person says they never filled anything in Second time this has happened email me at [EMAIL],0.44738760759109086
+F00909,2026-01-06,review,So Would be nice to actually get a response from the person I was matched with Otherwise fine,0.4633887018254989
+F00917,2025-11-17,review,"update - getting enquiries from people who want work in three months, not now would appreciate a reply",0.4993458281699399
+F00939,2025-10-21,survey,"Feedback: Left me waiting at the property in Z24 all morning, no message nothing Would appreciate a reply",0.43252130733086935
+F00951,2025-11-07,review,"hi, would be nice to actually get a response from the person i was matched with cheers",0.43588744609392177
+F00957,2025-09-27,review,fyi top up went through on my card but the balance didn't change would appreciate a reply,0.4369964958809323
+F00960,2025-11-12,support,"hi, third enquiry this week where the person says they never filled anything in",0.4533879171633982
+F00971,2026-01-04,support,"fyi getting enquiries from people who want work in three months, not now cheers I live near [POSTCODE]",0.44740466775876314
+F00988,2025-11-15,review,"Quick one: My balance went down by 4 and I didn't buy anything, what happened Please sort it out",0.47402517813713374
+F01024,2025-11-25,support,"still waiting for someone to call me back, it's been 13 days not impressed",0.36710457520405393
+F01059,2026-01-15,support,just to say the multi-day discount on the profile turned out not to exist not impressed,0.4058241325671305
+F01064,2026-01-22,review,so would be nice to actually get a response from the person i was matched with this was in z06,0.41639791695934386
+F01072,2025-09-10,survey,Third enquiry this week where the person says they never filled anything in Been using the site since December,0.45821878761900425
+F01074,2025-11-03,survey,FYI The multi-day discount on the profile turned out not to exist Otherwise fine,0.45717545324953335
+F01094,2025-12-01,survey,fyi would be nice to actually get a response from the person i was matched with cheers,0.44450679600577375
+F01118,2026-02-10,survey,So Would be nice to actually get a response from the person I was matched with Cheers,0.4380895895930688
+F01136,2025-10-11,review,FYI Third enquiry this week where the person says they never filled anything in,0.48317941316028834
+F01190,2025-09-22,review,"Quick one: Getting enquiries from people who want work in three months, not now Would appreciate a reply",0.4324698990960476
+F01219,2025-12-31,support,"Still waiting for someone to call me back, it's been 10 days Been using the site since November",0.35520160302557513
+F01222,2026-01-12,review,"just to say still waiting for someone to call me back, it's been 11 days please sort it out my number is [PHONE]",0.48486101916008967
+F01228,2026-01-28,review,"Hi, The multi-day discount on the profile turned out not to exist Otherwise fine",0.41997710349978956
+F01242,2025-10-24,support,"Honestly, Getting enquiries from people who want work in three months, not now Thanks",0.48173113639502346
+F01281,2025-12-17,review,"FYI Got one text and then silence, no idea if I have a tradesperson or not Would appreciate a reply",0.3838261088683822
+F01296,2026-01-26,review,"Update - Still waiting for someone to call me back, it's been 2 days Please sort it out",0.3825763996457724
+F01302,2026-02-24,review,"So My balance went down by 14 and I didn't buy anything, what happened Please sort it out",0.435323402578591
+F01307,2025-09-11,support,Quick one: Third enquiry this week where the person says they never filled anything in Cheers my number is [PHONE],0.4264261828777985
+F01337,2025-12-14,support,update - third enquiry this week where the person says they never filled anything in please sort it out,0.4209527605081559
+F01369,2026-02-17,review,So Asked for cash up front for the full job then said the rate had gone up Please sort it out,0.48685644617501617
+F01373,2026-01-21,support,"Honestly, Getting enquiries from people who want work in three months, not now Been using the site since December",0.4494430906395528
+F01376,2026-01-26,review,Not happy. Asked for cash up front for the full job then said the rate had gone up Not impressed,0.47403228211018644
+F01380,2025-12-27,survey,Quick one: Would be nice to actually get a response from the person I was matched with Otherwise fine,0.4666391129337457
+F01385,2026-02-13,survey,The multi-day discount on the profile turned out not to exist Thanks,0.4315939937630833
+F01397,2026-01-26,survey,"Hi, Getting enquiries from people who want work in three months, not now Would appreciate a reply",0.4410978424013191
+F01399,2025-11-20,support,"Feedback: Still waiting for someone to call me back, it's been 4 days Please sort it out email me at [EMAIL]",0.40505037156131224
+F01411,2025-09-23,review,"Honestly, Still waiting for someone to call me back, it's been 11 days Cheers",0.47425056514904124
+F01437,2026-01-10,support,"hi, would be nice to actually get a response from the person i was matched with been using the site since september",0.42492436803180644

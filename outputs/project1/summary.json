@@ -1,0 +1,366 @@
+{
+  "validation": {
+    "providers_raw": {
+      "errors": 0,
+      "warnings": 1
+    },
+    "leads_raw": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "offers_raw": {
+      "errors": 1,
+      "warnings": 0
+    },
+    "providers_clean": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "offers_clean": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "candidate_coverage": {
+    "n_leads": 2936,
+    "share_with_candidates": 1.0,
+    "share_relaxed": 0.1055858310626703,
+    "candidate_size_median": 33.0,
+    "candidate_size_p10": 9.0,
+    "candidate_size_p90": 61.0
+  },
+  "data": {
+    "rows": 14645,
+    "train": 10977,
+    "test": 3668,
+    "positive_rate": 0.4626835097302834
+  },
+  "ranking": {
+    "s_shown_rank": {
+      "precision@3": 0.5476536042573779,
+      "recall@3": 0.6936865021770683,
+      "ndcg@3": 0.6768106596599551,
+      "n_queries": 689,
+      "conv_precision@3": 0.30303030303030304,
+      "conv_recall@3": 0.7134986225895317,
+      "conv_ndcg@3": 0.5482950977399502,
+      "coverage": 1.0
+    },
+    "s_nearest": {
+      "precision@3": 0.5476536042573779,
+      "recall@3": 0.6936865021770683,
+      "ndcg@3": 0.6768106596599551,
+      "n_queries": 689,
+      "conv_precision@3": 0.30303030303030304,
+      "conv_recall@3": 0.7134986225895317,
+      "conv_ndcg@3": 0.5482950977399502,
+      "coverage": 1.0
+    },
+    "s_rule": {
+      "precision@3": 0.5645863570391872,
+      "recall@3": 0.7144895984518626,
+      "ndcg@3": 0.7078652242886884,
+      "n_queries": 689,
+      "conv_precision@3": 0.32231404958677684,
+      "conv_recall@3": 0.7635445362718091,
+      "conv_ndcg@3": 0.5953373331569892,
+      "coverage": 0.9680365296803652
+    },
+    "p_logreg": {
+      "precision@3": 0.5747460087082729,
+      "recall@3": 0.7248911465892598,
+      "ndcg@3": 0.7166818884119738,
+      "n_queries": 689,
+      "conv_precision@3": 0.31588613406795224,
+      "conv_recall@3": 0.7488521579430671,
+      "conv_ndcg@3": 0.5927390466904058,
+      "coverage": 0.9178082191780822,
+      "ece": 0.026151459931020575
+    },
+    "p_hgb": {
+      "precision@3": 0.575229801644896,
+      "recall@3": 0.7288824383164004,
+      "ndcg@3": 0.7218613317414906,
+      "n_queries": 689,
+      "conv_precision@3": 0.31313131313131315,
+      "conv_recall@3": 0.7378328741965107,
+      "conv_ndcg@3": 0.5887359311390422,
+      "coverage": 0.9497716894977168,
+      "ece": 0.01993182991690556
+    }
+  },
+  "global_importance": {
+    "urgent": 0.297,
+    "availability_overlap": 0.292,
+    "distance_km": 0.259,
+    "price_gap_pos": 0.229,
+    "hist_purchase_rate": 0.187,
+    "gender_pref_met": 0.153,
+    "has_credit": 0.143,
+    "lang_match": 0.107,
+    "years_exp_cap": 0.081,
+    "is_apprentice": 0.047,
+    "hours_wanted": 0.023,
+    "credit_balance_log": 0.021,
+    "rating_f": 0.02,
+    "tenure_days_log": 0.019,
+    "price_missing": 0.006,
+    "emergency": 0.003
+  },
+  "cold_start": {
+    "simulated_new_share": 0.2,
+    "ndcg_full_history": 0.7166818884119738,
+    "ndcg_with_20pct_cold": 0.7110506826711652,
+    "cold_exposure_ratio": 0.8208593035818166,
+    "policy": "new providers score with the prior purchase rate (empirical-Bayes shrinkage), so they are neither buried nor over-promoted; an explicit exploration slot (1 of K for providers with <10 offers) is recommended in docs/methodology.md"
+  },
+  "fairness": {
+    "tier": {
+      "accredited": {
+        "pool_share": 0.793,
+        "topk_share": 0.759,
+        "exposure_ratio": 0.956,
+        "observed_purchase_rate": 0.451
+      },
+      "apprentice": {
+        "pool_share": 0.207,
+        "topk_share": 0.241,
+        "exposure_ratio": 1.168,
+        "observed_purchase_rate": 0.493
+      }
+    },
+    "gender": {
+      "F": {
+        "pool_share": 0.281,
+        "topk_share": 0.305,
+        "exposure_ratio": 1.084,
+        "observed_purchase_rate": 0.49
+      },
+      "M": {
+        "pool_share": 0.719,
+        "topk_share": 0.695,
+        "exposure_ratio": 0.967,
+        "observed_purchase_rate": 0.448
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "strategy": "s_shown_rank",
+      "k": 2,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 1448,
+      "leads_unfilled": 4,
+      "expected_purchases": 764.0,
+      "purchases_per_lead": 1.039
+    },
+    {
+      "strategy": "s_shown_rank",
+      "k": 3,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 1984,
+      "leads_unfilled": 21,
+      "expected_purchases": 974.0,
+      "purchases_per_lead": 1.325
+    },
+    {
+      "strategy": "s_shown_rank",
+      "k": 4,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 2240,
+      "leads_unfilled": 42,
+      "expected_purchases": 1068.0,
+      "purchases_per_lead": 1.453
+    },
+    {
+      "strategy": "s_rule",
+      "k": 2,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 1447,
+      "leads_unfilled": 5,
+      "expected_purchases": 789.0,
+      "purchases_per_lead": 1.073
+    },
+    {
+      "strategy": "s_rule",
+      "k": 3,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 1979,
+      "leads_unfilled": 21,
+      "expected_purchases": 995.0,
+      "purchases_per_lead": 1.354
+    },
+    {
+      "strategy": "s_rule",
+      "k": 4,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 2233,
+      "leads_unfilled": 43,
+      "expected_purchases": 1075.0,
+      "purchases_per_lead": 1.463
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 2,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 1451,
+      "leads_unfilled": 2,
+      "expected_purchases": 790.0,
+      "purchases_per_lead": 1.075
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 1975,
+      "leads_unfilled": 22,
+      "expected_purchases": 990.0,
+      "purchases_per_lead": 1.347
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 4,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 2231,
+      "leads_unfilled": 43,
+      "expected_purchases": 1077.0,
+      "purchases_per_lead": 1.465
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 1975,
+      "leads_unfilled": 22,
+      "expected_purchases": 990.0,
+      "purchases_per_lead": 1.347
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.1,
+      "leads": 808,
+      "offers_made": 1947,
+      "leads_unfilled": 68,
+      "expected_purchases": 965.0,
+      "purchases_per_lead": 1.194
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.25,
+      "leads": 918,
+      "offers_made": 2085,
+      "leads_unfilled": 102,
+      "expected_purchases": 1015.0,
+      "purchases_per_lead": 1.106
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 0.9,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 1949,
+      "leads_unfilled": 28,
+      "expected_purchases": 980.0,
+      "purchases_per_lead": 1.333
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 0.9,
+      "demand_scale": 1.1,
+      "leads": 808,
+      "offers_made": 1896,
+      "leads_unfilled": 77,
+      "expected_purchases": 941.0,
+      "purchases_per_lead": 1.165
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 0.9,
+      "demand_scale": 1.25,
+      "leads": 918,
+      "offers_made": 2025,
+      "leads_unfilled": 107,
+      "expected_purchases": 986.0,
+      "purchases_per_lead": 1.074
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 0.75,
+      "demand_scale": 1.0,
+      "leads": 735,
+      "offers_made": 1841,
+      "leads_unfilled": 41,
+      "expected_purchases": 913.0,
+      "purchases_per_lead": 1.242
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 0.75,
+      "demand_scale": 1.1,
+      "leads": 808,
+      "offers_made": 1760,
+      "leads_unfilled": 103,
+      "expected_purchases": 864.0,
+      "purchases_per_lead": 1.069
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 0.75,
+      "demand_scale": 1.25,
+      "leads": 918,
+      "offers_made": 1857,
+      "leads_unfilled": 151,
+      "expected_purchases": 899.0,
+      "purchases_per_lead": 0.979
+    }
+  ],
+  "monitoring_psi": {
+    "distance_km": 0.0028,
+    "availability_overlap": 0.0051,
+    "price_gap_pos": 0.0019,
+    "price_missing": 0.0,
+    "has_credit": 0.0,
+    "credit_balance_log": 0.0023,
+    "urgent": 0.0,
+    "emergency": 0.0,
+    "lang_match": 0.0,
+    "gender_pref_met": 0.0,
+    "rating_f": 0.0029,
+    "years_exp_cap": 0.0012,
+    "is_apprentice": 0.0,
+    "hist_purchase_rate": 0.0404,
+    "tenure_days_log": 0.3437,
+    "hours_wanted": 0.0042,
+    "score_logreg": 0.0031
+  }
+}
