@@ -7,10 +7,17 @@ from __future__ import annotations
 import re
 import pandas as pd
 
+# Separators: UK numbers are written with spaces, hyphens, dots or brackets.
+_SEP = r"[\s.\-]?"
 PATTERNS = {
-    "PHONE": re.compile(r"(?:\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}|\b0\d{10}\b"),
+    # mobile (07… / +447…) and landline (+44 1–2… / 0…), each allowing separators
+    "PHONE": re.compile(
+        r"(?:\+44\s?\(?0?\)?\s?|\b0)"                      # +44, +44(0), or leading 0
+        rf"(?:\d{{2,5}}{_SEP}\d{{3,4}}{_SEP}\d{{3,4}}|\d{{9,10}})\b"
+    ),
     "EMAIL": re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+"),
-    "POSTCODE": re.compile(r"\b[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}\b"),
+    # case-insensitive: users type postcodes in lower case at least as often
+    "POSTCODE": re.compile(r"\b[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}\b", re.IGNORECASE),
     "URL": re.compile(r"https?://\S+|www\.\S+"),
 }
 # In production this gazetteer would be replaced by a NER model + the
@@ -30,15 +37,33 @@ def redact(t: str) -> tuple[str, dict]:
         counts["NAME"] = counts.get("NAME", 0) + 1
         return f"{m.group(1)} [NAME]"
     t = _NAME_CTX.sub(_name, t)
-    toks = t.split()
+    # Gazetteer pass. Strip surrounding punctuation *and* a possessive suffix
+    # ("Tom's" previously survived), and rebuild the token with its trimmings
+    # so the redaction does not silently reflow the text.
     out = []
-    for w in toks:
-        if w.strip(",.!?").lower() in NAME_GAZETTEER:
+    for w in t.split():
+        core = w.strip(",.!?;:()\"'")
+        stem = core[:-2] if core.lower().endswith("'s") else core
+        if stem.lower() in NAME_GAZETTEER:
             counts["NAME"] = counts.get("NAME", 0) + 1
-            out.append("[NAME]")
+            out.append(w.replace(stem, "[NAME]", 1))
         else:
             out.append(w)
     return " ".join(out), counts
+
+
+def residual_pii(texts: pd.Series) -> pd.Series:
+    """Rows where a structured identifier survived redaction.
+
+    The gate reuses PATTERNS itself: the previous check looked only for
+    `\d{10}|@`, which a separated phone number ("07700-900-123") or a
+    lower-case postcode passes untouched, so redaction gaps could not fail
+    the run they were meant to catch.
+    """
+    hit = pd.Series(False, index=texts.index)
+    for pat in PATTERNS.values():
+        hit |= texts.str.contains(pat, regex=True, na=False)
+    return hit
 
 
 def apply(df: pd.DataFrame, col: str = "text_clean") -> tuple[pd.DataFrame, dict]:

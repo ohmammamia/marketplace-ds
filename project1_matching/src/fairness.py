@@ -6,11 +6,13 @@ constraint and is honoured at candidate generation, not here."""
 from __future__ import annotations
 import pandas as pd
 
+from .evaluation import order_by_score
+
 
 def exposure_by_group(df: pd.DataFrame, ins: pd.DataFrame, score_col: str, group: str, k: int = 3) -> pd.DataFrame:
     d = df.merge(ins[["provider_id", group]], on="provider_id", how="left")
     pool = d.groupby(group).size() / len(d)
-    top = d.sort_values(score_col, ascending=False).groupby("lead_id").head(k)
+    top = order_by_score(d, score_col).groupby("lead_id").head(k)
     exp = top.groupby(group).size() / len(top)
     out = pd.DataFrame({"pool_share": pool, "topk_share": exp}).fillna(0)
     out["exposure_ratio"] = out.topk_share / out.pool_share

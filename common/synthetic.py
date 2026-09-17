@@ -330,12 +330,18 @@ def make_feedback(n: int, rng: np.random.Generator, weeks: int = 26) -> pd.DataF
 def generate_all(out_dir: str, seed: int = 42, n_providers: int = 220,
                  n_leads: int = 3000, n_feedback: int = 1500) -> dict[str, pd.DataFrame]:
     import os
-    rng = np.random.default_rng(seed)
+    # One independent stream per table, derived from a single seed. Threading a
+    # single shared `rng` through all four made every table depend on how many
+    # draws the previous one happened to take, so any edit to an earlier
+    # generator silently changed the tables after it — which is how the
+    # committed data drifted out of step with this file.
+    ss = np.random.SeedSequence(seed)
+    r_prov, r_leads, r_offers, r_fb = (np.random.default_rng(s) for s in ss.spawn(4))
     os.makedirs(out_dir, exist_ok=True)
-    prov = make_providers(n_providers, rng)
-    leads = make_leads(n_leads, rng)
-    offers = make_offers(leads, prov, rng)
-    fb = make_feedback(n_feedback, rng)
+    prov = make_providers(n_providers, r_prov)
+    leads = make_leads(n_leads, r_leads)
+    offers = make_offers(leads, prov, r_offers)
+    fb = make_feedback(n_feedback, r_fb)
     prov_public = prov.drop(columns=["_responsiveness"])  # latent variable never exported
     data = {"providers": prov_public, "leads": leads, "offers": offers, "feedback": fb}
     for k, v in data.items():

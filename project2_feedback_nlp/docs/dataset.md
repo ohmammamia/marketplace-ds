@@ -24,4 +24,4 @@ have passed a manual check would be shared.
 
 ## Quality profile (demo)
 1,560 records → 1,329 kept: 159 exact duplicates, 39 too short, 21 empty, 12 non-English.
-21% of kept records contained ≥1 identifier (118 phones, 61 emails, 63 postcodes, 50 names).
+19% of kept records contained ≥1 identifier (133 phones, 65 emails, 44 postcodes, 19 names).

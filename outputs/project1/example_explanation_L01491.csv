@@ -1,0 +1,4 @@
+provider_id,p_purchase,distance_km,availability_overlap,price_gap_pos,price_missing,has_credit,credit_balance_log,urgent,emergency,lang_match,gender_pref_met,rating_f,years_exp_cap,is_apprentice,hist_purchase_rate,tenure_days_log,hours_wanted
+P0116,0.529,0.25,-0.45,0.18,0.0,0.03,0.04,-0.28,-0.01,-0.09,0.09,-0.02,0.0,-0.02,0.33,-0.01,-0.01
+P0056,0.46,0.25,-0.45,-0.19,0.0,0.03,0.12,-0.28,-0.01,-0.09,0.09,0.01,-0.01,-0.02,0.3,0.01,-0.01
+P0044,0.316,0.25,-0.45,-0.4,0.0,0.03,-0.03,-0.28,-0.01,0.21,0.09,-0.02,-0.01,0.07,-0.3,0.01,-0.01

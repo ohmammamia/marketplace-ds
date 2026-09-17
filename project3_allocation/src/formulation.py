@@ -34,6 +34,7 @@ Weights: λ_u is set so that leaving a lead unfilled is worse than any single
 notification's quality (λ_u = 1.0 > max q); λ_f and λ_d are swept in the
 trade-off analysis rather than fixed by assumption (decision log D3)."""
 from __future__ import annotations
+import dataclasses
 from dataclasses import dataclass, field
 import numpy as np
 import pandas as pd
@@ -47,6 +48,7 @@ class Instance:
     M: int = 3
     priority_min: int = 2
     weights: dict = field(default_factory=lambda: {"unfilled": 1.0, "fairness": 0.3, "distance": 0.1})
+    validation: dict = field(default_factory=dict)   # ValidationReport per input frame
 
     @property
     def min_offers(self) -> pd.Series:
@@ -60,6 +62,19 @@ class Instance:
     def wants_lead(self) -> pd.Series:
         i = self.providers.set_index("provider_id")
         return (i.credit_balance > 0) & (i.weekly_lead_capacity >= 1)
+
+
+def restrict_distance(inst: Instance, max_km: float | None) -> Instance:
+    """Apply a distance cap by shrinking E, the feasible pair set.
+
+    The cap is a property of the *instance*, not of one solver: filtering here
+    means the MILP, the greedy baseline and `objective_value` all see the same
+    feasible set and the same `d_max` normaliser, so scenario comparisons stay
+    like-for-like.
+    """
+    if max_km is None:
+        return inst
+    return dataclasses.replace(inst, pairs=inst.pairs[inst.pairs.distance_km <= max_km].copy())
 
 
 def objective_value(inst: Instance, x: pd.DataFrame) -> dict:

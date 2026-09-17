@@ -27,21 +27,23 @@ point where no credit-holding provider is left out at negligible cost.
 ## Results (demo peak week)
 | | greedy | MILP |
 |---|---|---|
-| expected purchases | 254.4 | **283.1** (+11%) |
-| leads unfilled | 5 | 0 |
-| leads below priority minimum | 5 | 0 |
-| providers with zero leads | 22 | 0 |
-| mean q of notifications | 0.546 | 0.579 |
-| Gini of provider load | 0.38 | 0.32 |
+| expected purchases | 264.5 | **281.6** (+6.4%) |
+| leads unfilled | 0 | 0 |
+| leads below priority minimum | 2 | 0 |
+| providers with zero leads | 32 | 2 |
+| mean q of notifications | 0.604 | 0.633 |
+| Gini of provider load | 0.41 | 0.33 |
 
-Fairness trade-off: λ_f 0 → 0.3 removes all 12 zero-lead providers for −0.7 expected
-purchases. Binding constraints: 71% of providers' capacity is saturated; **M (offers per
-lead) is the most valuable relaxation** (+49 expected purchases for M=4), then capacity
-(+14 for +1 each); the priority minimum costs nothing.
+Fairness trade-off: λ_f 0 → 0.3 takes zero-lead providers from 30 to 2 for −2.1 expected
+purchases. Binding constraints: 57% of providers' capacity is saturated; **M (offers per
+lead) is the most valuable relaxation** (+67.3 expected purchases for M=4), then capacity
+(+9.0 for +1 each); the priority minimum costs nothing.
 
-Scenarios: at demand +25% the MILP still fills every lead where greedy leaves 18;
-at capacity −25% utilisation reaches 93% and the difference to greedy widens.
+Scenarios: at demand +25% the MILP still fills every lead where greedy leaves 8;
+at capacity −25% utilisation reaches 81% and the difference to greedy widens. The 5 km
+scenario caps distance on the *instance*, so greedy and the MILP are compared on the
+same feasible set (previously the cap reached only the MILP, which flattered greedy).
 
-Robustness: with σ = 0.05 noise on q, 55% of notifications change but regret is 2.3% —
-many near-equivalent allocations exist, so the recommendation is stable in value even
-when it is not unique.
+Robustness: with σ = 0.05 noise on q, 51% of notifications change — the Jaccard overlap
+is 0.49, i.e. 49% are *retained* — and regret is 2.6%. Many near-equivalent allocations
+exist, so the recommendation is stable in value even when it is not unique.

@@ -1,9 +1,9 @@
 ,provider_no_show,provider_communication,price_dispute,workmanship_quality,safety_issue,lead_quality,credits_refund,app_bug
-provider_no_show,17,0,1,0,0,0,0,1
-provider_communication,0,17,0,0,0,0,0,0
-price_dispute,0,0,14,0,0,0,0,1
-workmanship_quality,0,0,0,27,0,0,0,4
+provider_no_show,16,0,0,0,0,0,0,3
+provider_communication,0,15,0,0,0,0,0,0
+price_dispute,0,0,12,0,0,0,0,0
+workmanship_quality,0,0,0,26,0,0,0,4
 safety_issue,0,0,0,0,9,0,0,0
-lead_quality,0,0,0,0,0,16,0,3
-credits_refund,4,0,0,0,0,2,14,1
-app_bug,1,0,0,0,0,0,0,9
+lead_quality,0,0,2,0,0,10,0,1
+credits_refund,6,0,0,0,0,0,8,0
+app_bug,2,0,0,0,0,0,0,18

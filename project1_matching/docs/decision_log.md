@@ -26,18 +26,18 @@
 - **Why** prior_n=10 ≈ two weeks of offers; handles cold start without a separate model.
 
 ### D5 Logistic regression over HGB / LTR
-- **Evidence** HGB NDCG@3 0.703 vs LR 0.715; LR ECE 0.036.
+- **Evidence** HGB NDCG@3 0.729 vs LR 0.736; LR ECE 0.052, HGB 0.047.
 - **Why** explainable additive contributions; calibrated probabilities for Project 3; trivial to serve.
 - **Would change if** data volume ×10 and HGB gains >2 NDCG points on a temporal holdout.
 
 ### D6 Position de-biasing via `rank_shown` fixed at 1
-- **Evidence** purchase rate falls 54% → 37% across positions.
+- **Evidence** purchase rate falls 57% → 36% across positions 1→5.
 - **Alternatives** inverse-propensity weighting; ignore.
 - **Why** simplest correction with a single logged policy; IPW needs randomisation we do not have.
 - **Risks** residual confounding — requires an online interleaving test (limitations).
 
 ### D7 Drop `hist_n_offers_log` from features
-- **Evidence** PSI train→test = 2.68 (drift by construction, grows with platform age).
+- **Evidence** excluded from FEATURES; `tenure_days_log` is now the largest surviving drift (PSI 0.36).
 - **Why** a monotonic feature guarantees false drift alarms and degrades under retraining; shrinkage already encodes sample size.
 
 ### D8 Simulated cold start

@@ -4,7 +4,7 @@ import os, sys
 import pandas as pd
 from common.monitoring import get_logger, save_json, load_config
 from . import instance, milp, analysis
-from .formulation import objective_value
+from .formulation import objective_value, restrict_distance
 
 log = get_logger("p3.pipeline")
 
@@ -13,6 +13,10 @@ def run(cfg: dict) -> dict:
     out = cfg["output_dir"]; os.makedirs(out, exist_ok=True)
     S = {}
     inst = instance.build(cfg["data_dir"], cfg["week_start"], cfg["p1_model_path"], cfg["M"], cfg["weights"])
+    pd.concat([r.to_frame().assign(dataset=n) for n, r in inst.validation.items()]).to_csv(
+        f"{out}/validation_report.csv", index=False)
+    S["validation"] = {n: {"errors": len(r.errors), "warnings": len(r.warnings)} for n, r in inst.validation.items()}
+    log.info("validation: %s", S["validation"])
     S["instance"] = {"week": cfg["week_start"], "leads": len(inst.leads), "providers": len(inst.providers),
                      "feasible_pairs": len(inst.pairs), "total_capacity": int(inst.capacity.sum()),
                      "priority_leads": int((inst.leads.urgency != "none").sum()),
@@ -35,7 +39,9 @@ def run(cfg: dict) -> dict:
     for sc in cfg["scenarios"]:
         kw = {k: sc[k] for k in ("demand_scale", "capacity_scale") if k in sc}
         i2 = instance.build(cfg["data_dir"], sc.get("week_start", cfg["week_start"]), cfg["p1_model_path"], cfg["M"], cfg["weights"], **kw)
-        x, info = milp.solve(i2, extra_max_distance=sc.get("max_distance"))
+        # the cap shrinks E for *both* solvers, so the comparison stays like-for-like
+        i2 = restrict_distance(i2, sc.get("max_distance"))
+        x, info = milp.solve(i2)
         xg = analysis.greedy.solve(i2)
         ov, og = objective_value(i2, x), objective_value(i2, xg)
         sc_rows.append({"scenario": sc["name"], "leads": len(i2.leads), "capacity": int(i2.capacity.sum()), "status": info["status"],

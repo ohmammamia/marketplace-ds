@@ -29,7 +29,7 @@ logic, feature definitions, configuration, fixtures and documentation only.
 |---|---|
 | duplicate provider registrations | exact match on stable attributes, keep earliest id (D1) |
 | job_type casing | normalised to lower case |
-| ~6% missing rating, ~4% missing price | imputed at feature time with an explicit `price_missing` flag |
+| ~5% missing rating, ~3% missing price | imputed at feature time with an explicit `price_missing` flag |
 | ~2% leads with unknown zone | dropped: no candidate generation possible; flagged for product fix |
 | orphan offer rows | dropped after referential-integrity check |
 | sparse provider history / new providers | empirical-Bayes shrinkage (prior_n = 10) |

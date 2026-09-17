@@ -1,5 +1,5 @@
 import pandas as pd
-from project3_allocation.src.formulation import Instance, objective_value
+from project3_allocation.src.formulation import Instance, objective_value, restrict_distance
 from project3_allocation.src import milp, greedy
 
 def _toy():
@@ -22,6 +22,25 @@ def test_priority_lead_gets_two_offers():
     assert (xm.lead_id == "L1").sum() == 2          # capacity A=1,B=2 allows it; priority min = 2
 
 def test_infeasible_pairs_never_chosen():
-    inst = _toy()
-    xm, _ = milp.solve(inst, extra_max_distance=1.5)
+    inst = restrict_distance(_toy(), 1.5)
+    xm, _ = milp.solve(inst)
     assert set(xm.provider_id) == {"A"}
+
+def test_distance_cap_applies_to_greedy_too():
+    """The cap shrinks E, so both solvers see it.
+
+    Previously it was a MILP-only argument: greedy kept allocating beyond the
+    cap and the two were still compared head-to-head.
+    """
+    capped = restrict_distance(_toy(), 1.5)
+    xg, xm = greedy.solve(capped), milp.solve(capped)[0]
+    assert set(xg.provider_id) == {"A"}, "greedy must honour the distance cap"
+    assert set(xm.provider_id) == {"A"}
+    # and the cap must actually bind: uncapped, greedy reaches B
+    assert "B" in set(greedy.solve(_toy()).provider_id)
+
+def test_objective_matches_solver_under_cap():
+    """`objective_value` and the MILP must normalise distance by the same d_max."""
+    capped = restrict_distance(_toy(), 1.5)
+    xm, info = milp.solve(capped)
+    assert abs(info["objective"] - objective_value(capped, xm)["objective"]) < 1e-9

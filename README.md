@@ -55,9 +55,12 @@ scripts/           notebook builder
 ## Production data-science layer (cross-project)
 - **Validation**: `common/validation.py` — schema, types, ranges, categories, key
   uniqueness, missingness, referential integrity; explicit `ValidationReport`, blocking
-  gate before modelling. Used by all three pipelines.
-- **Reproducibility**: seeded generator, YAML configs, deterministic models/solver,
-  temporal splits, `summary.json` per run.
+  gate before modelling. All three pipelines validate their inputs, call
+  `raise_if_failed()` on the cleaned frames and publish `validation_report.csv`.
+- **Reproducibility**: seeded generator with an independent stream per table, **pinned**
+  dependencies, YAML configs, deterministic models/solver, explicit rank tie-breaks,
+  temporal splits, `summary.json` per run. `make data && make p1 p2 p3` reproduces
+  every committed artefact byte-for-byte on the pinned versions.
 - **Testing**: unit tests for validation, candidate rules, leakage, ranking metrics,
   redaction, quality reasons, emergence logic, MILP constraints.
 - **Monitoring**: feature/score PSI (P1), category-share drift + review-queue size (P2),

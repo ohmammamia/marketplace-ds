@@ -21,8 +21,18 @@ def run(cfg: dict) -> dict:
     S = {}
     fb = pd.read_csv(f"{cfg['data_dir']}/feedback.csv", parse_dates=["created_at"])
     hidden = fb.pop("true_theme")           # evaluation-only labels, removed before processing
-    rep = validate(fb, FEEDBACK_SCHEMA, "feedback_raw"); rep.to_frame().to_csv(f"{out}/validation_report.csv", index=False)
-    S["validation"] = {"errors": len(rep.errors), "warnings": len(rep.warnings)}
+    reports = {"feedback_raw": validate(fb, FEEDBACK_SCHEMA, "feedback_raw")}
+    # The generator injects duplicate submissions (the same feedback_id posted
+    # twice). They are dropped here, before the clean report is gated on, so a
+    # genuine schema error cannot hide behind a known data-quality artefact.
+    n0 = len(fb)
+    fb = fb.drop_duplicates(subset="feedback_id", keep="first").reset_index(drop=True)
+    log.info("feedback: %d -> %d after dropping duplicate feedback_id", n0, len(fb))
+    reports["feedback_clean"] = validate(fb, FEEDBACK_SCHEMA, "feedback_clean")
+    reports["feedback_clean"].raise_if_failed()          # blocking gate before modelling
+    pd.concat([r.to_frame().assign(dataset=n) for n, r in reports.items()]).to_csv(
+        f"{out}/validation_report.csv", index=False)
+    S["validation"] = {n: {"errors": len(r.errors), "warnings": len(r.warnings)} for n, r in reports.items()}
     log.info("validation: %s", S["validation"])
 
     # quality
@@ -30,7 +40,9 @@ def run(cfg: dict) -> dict:
     kept = fb[fb.exclusion_reason == ""].copy()
     # privacy
     kept, S["privacy"] = privacy.apply(kept); log.info("privacy: %s", S["privacy"])
-    assert not kept.text_redacted.str.contains(r"\d{10}|@", regex=True).any(), "PII leaked past redaction"
+    leaked = privacy.residual_pii(kept.text_redacted)
+    if leaked.any():  # a raise, not an assert: `python -O` strips asserts
+        raise ValueError(f"PII leaked past redaction in {int(leaked.sum())} document(s)")
     texts = kept.text_redacted
 
     # exploratory

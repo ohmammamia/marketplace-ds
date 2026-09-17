@@ -64,7 +64,8 @@ def validate(df: pd.DataFrame, schema: Schema, name: str,
             continue
         actual = df[col].dtype.kind
         ok = actual == kind or (kind == "f" and actual == "i") or (kind == "i" and actual == "f" and df[col].dropna().mod(1).eq(0).all())
-        rep.add(f"dtype:{col}", ok, "warning", detail=f"expected {KIND[kind]}, got {df[col].dtype}")
+        rep.add(f"dtype:{col}", ok, "warning",
+                detail="" if ok else f"expected {KIND[kind]}, got {df[col].dtype}")
     # 2. key uniqueness
     if schema.key and schema.key in df:
         n_dup = int(df[schema.key].duplicated().sum())
@@ -84,7 +85,8 @@ def validate(df: pd.DataFrame, schema: Schema, name: str,
     for col, allowed in schema.categories.items():
         if col in df:
             bad = set(df[col].dropna().unique()) - allowed
-            rep.add(f"categories:{col}", not bad, "warning", detail=f"unexpected: {sorted(map(str, bad))[:5]}")
+            rep.add(f"categories:{col}", not bad, "warning",
+                    detail="" if not bad else f"unexpected: {sorted(map(str, bad))[:5]}")
     # 6. referential integrity
     for col, ref in (references or {}).items():
         if col in df:

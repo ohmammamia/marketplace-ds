@@ -1,10 +1,19 @@
-name,passed,severity,detail
-dtype:feedback_id,True,warning,"expected object, got object"
-dtype:created_at,True,warning,"expected datetime, got datetime64[ns]"
-dtype:author_type,True,warning,"expected object, got object"
-dtype:channel,True,warning,"expected object, got object"
-dtype:text,True,warning,"expected object, got object"
-unique_key,False,error,60 duplicated feedback_id
-missing:text,True,warning,1.5% missing (allowed 5%)
-categories:author_type,True,warning,unexpected: []
-categories:channel,True,warning,unexpected: []
+name,passed,severity,detail,dataset
+dtype:feedback_id,True,warning,,feedback_raw
+dtype:created_at,True,warning,,feedback_raw
+dtype:author_type,True,warning,,feedback_raw
+dtype:channel,True,warning,,feedback_raw
+dtype:text,True,warning,,feedback_raw
+unique_key,False,error,60 duplicated feedback_id,feedback_raw
+missing:text,True,warning,1.3% missing (allowed 5%),feedback_raw
+categories:author_type,True,warning,,feedback_raw
+categories:channel,True,warning,,feedback_raw
+dtype:feedback_id,True,warning,,feedback_clean
+dtype:created_at,True,warning,,feedback_clean
+dtype:author_type,True,warning,,feedback_clean
+dtype:channel,True,warning,,feedback_clean
+dtype:text,True,warning,,feedback_clean
+unique_key,True,error,0 duplicated feedback_id,feedback_clean
+missing:text,True,warning,1.3% missing (allowed 5%),feedback_clean
+categories:author_type,True,warning,,feedback_clean
+categories:channel,True,warning,,feedback_clean

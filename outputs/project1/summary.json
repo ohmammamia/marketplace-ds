@@ -22,125 +22,125 @@
     }
   },
   "candidate_coverage": {
-    "n_leads": 2936,
+    "n_leads": 2930,
     "share_with_candidates": 1.0,
-    "share_relaxed": 0.1055858310626703,
-    "candidate_size_median": 33.0,
-    "candidate_size_p10": 9.0,
-    "candidate_size_p90": 61.0
+    "share_relaxed": 0.10511945392491467,
+    "candidate_size_median": 32.0,
+    "candidate_size_p10": 10.0,
+    "candidate_size_p90": 66.0
   },
   "data": {
-    "rows": 14645,
-    "train": 10977,
-    "test": 3668,
-    "positive_rate": 0.4626835097302834
+    "rows": 14650,
+    "train": 10895,
+    "test": 3755,
+    "positive_rate": 0.4710580204778157
   },
   "ranking": {
     "s_shown_rank": {
-      "precision@3": 0.5476536042573779,
-      "recall@3": 0.6936865021770683,
-      "ndcg@3": 0.6768106596599551,
-      "n_queries": 689,
-      "conv_precision@3": 0.30303030303030304,
-      "conv_recall@3": 0.7134986225895317,
-      "conv_ndcg@3": 0.5482950977399502,
-      "coverage": 1.0
+      "precision@3": 0.5640661938534278,
+      "recall@3": 0.6902836879432623,
+      "ndcg@3": 0.6804539900357087,
+      "n_queries": 705,
+      "conv_precision@3": 0.2873239436619718,
+      "conv_recall@3": 0.6690140845070423,
+      "conv_ndcg@3": 0.49589741499176704,
+      "coverage": 0.9954545454545455
     },
     "s_nearest": {
-      "precision@3": 0.5476536042573779,
-      "recall@3": 0.6936865021770683,
-      "ndcg@3": 0.6768106596599551,
-      "n_queries": 689,
-      "conv_precision@3": 0.30303030303030304,
-      "conv_recall@3": 0.7134986225895317,
-      "conv_ndcg@3": 0.5482950977399502,
-      "coverage": 1.0
+      "precision@3": 0.5560283687943263,
+      "recall@3": 0.6811820330969267,
+      "ndcg@3": 0.6666144853367718,
+      "n_queries": 705,
+      "conv_precision@3": 0.27323943661971833,
+      "conv_recall@3": 0.6293427230046948,
+      "conv_ndcg@3": 0.483911793157386,
+      "coverage": 0.9818181818181818
     },
     "s_rule": {
-      "precision@3": 0.5645863570391872,
-      "recall@3": 0.7144895984518626,
-      "ndcg@3": 0.7078652242886884,
-      "n_queries": 689,
-      "conv_precision@3": 0.32231404958677684,
-      "conv_recall@3": 0.7635445362718091,
-      "conv_ndcg@3": 0.5953373331569892,
-      "coverage": 0.9680365296803652
+      "precision@3": 0.5815602836879432,
+      "recall@3": 0.7109692671394799,
+      "ndcg@3": 0.7178421159490217,
+      "n_queries": 705,
+      "conv_precision@3": 0.2910798122065728,
+      "conv_recall@3": 0.6779342723004694,
+      "conv_ndcg@3": 0.532532338163142,
+      "coverage": 0.9863636363636363
     },
     "p_logreg": {
-      "precision@3": 0.5747460087082729,
-      "recall@3": 0.7248911465892598,
-      "ndcg@3": 0.7166818884119738,
-      "n_queries": 689,
-      "conv_precision@3": 0.31588613406795224,
-      "conv_recall@3": 0.7488521579430671,
-      "conv_ndcg@3": 0.5927390466904058,
-      "coverage": 0.9178082191780822,
-      "ece": 0.026151459931020575
+      "precision@3": 0.5933806146572104,
+      "recall@3": 0.7284633569739952,
+      "ndcg@3": 0.7356806336235688,
+      "n_queries": 705,
+      "conv_precision@3": 0.3145539906103286,
+      "conv_recall@3": 0.7455399061032862,
+      "conv_ndcg@3": 0.5750127024527076,
+      "coverage": 0.9363636363636364,
+      "ece": 0.0518867970570282
     },
     "p_hgb": {
-      "precision@3": 0.575229801644896,
-      "recall@3": 0.7288824383164004,
-      "ndcg@3": 0.7218613317414906,
-      "n_queries": 689,
-      "conv_precision@3": 0.31313131313131315,
-      "conv_recall@3": 0.7378328741965107,
-      "conv_ndcg@3": 0.5887359311390422,
-      "coverage": 0.9497716894977168,
-      "ece": 0.01993182991690556
+      "precision@3": 0.5881796690307328,
+      "recall@3": 0.7210165484633569,
+      "ndcg@3": 0.7293745487130981,
+      "n_queries": 705,
+      "conv_precision@3": 0.30422535211267604,
+      "conv_recall@3": 0.7230046948356808,
+      "conv_ndcg@3": 0.5593650484838092,
+      "coverage": 0.95,
+      "ece": 0.04656092187203595
     }
   },
   "global_importance": {
-    "urgent": 0.297,
-    "availability_overlap": 0.292,
-    "distance_km": 0.259,
-    "price_gap_pos": 0.229,
-    "hist_purchase_rate": 0.187,
-    "gender_pref_met": 0.153,
-    "has_credit": 0.143,
-    "lang_match": 0.107,
-    "years_exp_cap": 0.081,
-    "is_apprentice": 0.047,
-    "hours_wanted": 0.023,
-    "credit_balance_log": 0.021,
-    "rating_f": 0.02,
-    "tenure_days_log": 0.019,
-    "price_missing": 0.006,
-    "emergency": 0.003
+    "urgent": 0.338,
+    "availability_overlap": 0.276,
+    "distance_km": 0.234,
+    "price_gap_pos": 0.198,
+    "hist_purchase_rate": 0.197,
+    "gender_pref_met": 0.154,
+    "lang_match": 0.125,
+    "credit_balance_log": 0.093,
+    "has_credit": 0.061,
+    "is_apprentice": 0.03,
+    "tenure_days_log": 0.015,
+    "emergency": 0.015,
+    "rating_f": 0.012,
+    "years_exp_cap": 0.01,
+    "hours_wanted": 0.007,
+    "price_missing": 0.002
   },
   "cold_start": {
     "simulated_new_share": 0.2,
-    "ndcg_full_history": 0.7166818884119738,
-    "ndcg_with_20pct_cold": 0.7110506826711652,
-    "cold_exposure_ratio": 0.8208593035818166,
+    "ndcg_full_history": 0.7356806336235688,
+    "ndcg_with_20pct_cold": 0.7326836448022604,
+    "cold_exposure_ratio": 0.8915239350021958,
     "policy": "new providers score with the prior purchase rate (empirical-Bayes shrinkage), so they are neither buried nor over-promoted; an explicit exploration slot (1 of K for providers with <10 offers) is recommended in docs/methodology.md"
   },
   "fairness": {
     "tier": {
       "accredited": {
-        "pool_share": 0.793,
-        "topk_share": 0.759,
-        "exposure_ratio": 0.956,
-        "observed_purchase_rate": 0.451
+        "pool_share": 0.765,
+        "topk_share": 0.731,
+        "exposure_ratio": 0.955,
+        "observed_purchase_rate": 0.462
       },
       "apprentice": {
-        "pool_share": 0.207,
-        "topk_share": 0.241,
-        "exposure_ratio": 1.168,
-        "observed_purchase_rate": 0.493
+        "pool_share": 0.235,
+        "topk_share": 0.269,
+        "exposure_ratio": 1.148,
+        "observed_purchase_rate": 0.507
       }
     },
     "gender": {
       "F": {
-        "pool_share": 0.281,
-        "topk_share": 0.305,
-        "exposure_ratio": 1.084,
-        "observed_purchase_rate": 0.49
+        "pool_share": 0.279,
+        "topk_share": 0.312,
+        "exposure_ratio": 1.117,
+        "observed_purchase_rate": 0.52
       },
       "M": {
-        "pool_share": 0.719,
-        "topk_share": 0.695,
-        "exposure_ratio": 0.967,
-        "observed_purchase_rate": 0.448
+        "pool_share": 0.721,
+        "topk_share": 0.688,
+        "exposure_ratio": 0.955,
+        "observed_purchase_rate": 0.454
       }
     }
   },
@@ -150,217 +150,217 @@
       "k": 2,
       "capacity_scale": 1.0,
       "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 1448,
-      "leads_unfilled": 4,
-      "expected_purchases": 764.0,
-      "purchases_per_lead": 1.039
-    },
-    {
-      "strategy": "s_shown_rank",
-      "k": 3,
-      "capacity_scale": 1.0,
-      "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 1984,
-      "leads_unfilled": 21,
-      "expected_purchases": 974.0,
-      "purchases_per_lead": 1.325
-    },
-    {
-      "strategy": "s_shown_rank",
-      "k": 4,
-      "capacity_scale": 1.0,
-      "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 2240,
-      "leads_unfilled": 42,
-      "expected_purchases": 1068.0,
-      "purchases_per_lead": 1.453
-    },
-    {
-      "strategy": "s_rule",
-      "k": 2,
-      "capacity_scale": 1.0,
-      "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 1447,
-      "leads_unfilled": 5,
+      "leads": 751,
+      "offers_made": 1490,
+      "leads_unfilled": 3,
       "expected_purchases": 789.0,
-      "purchases_per_lead": 1.073
+      "purchases_per_lead": 1.051
+    },
+    {
+      "strategy": "s_shown_rank",
+      "k": 3,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 751,
+      "offers_made": 2084,
+      "leads_unfilled": 10,
+      "expected_purchases": 1056.0,
+      "purchases_per_lead": 1.406
+    },
+    {
+      "strategy": "s_shown_rank",
+      "k": 4,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 751,
+      "offers_made": 2408,
+      "leads_unfilled": 18,
+      "expected_purchases": 1173.0,
+      "purchases_per_lead": 1.562
+    },
+    {
+      "strategy": "s_rule",
+      "k": 2,
+      "capacity_scale": 1.0,
+      "demand_scale": 1.0,
+      "leads": 751,
+      "offers_made": 1490,
+      "leads_unfilled": 2,
+      "expected_purchases": 850.0,
+      "purchases_per_lead": 1.132
     },
     {
       "strategy": "s_rule",
       "k": 3,
       "capacity_scale": 1.0,
       "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 1979,
-      "leads_unfilled": 21,
-      "expected_purchases": 995.0,
-      "purchases_per_lead": 1.354
+      "leads": 751,
+      "offers_made": 2077,
+      "leads_unfilled": 7,
+      "expected_purchases": 1077.0,
+      "purchases_per_lead": 1.434
     },
     {
       "strategy": "s_rule",
       "k": 4,
       "capacity_scale": 1.0,
       "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 2233,
-      "leads_unfilled": 43,
-      "expected_purchases": 1075.0,
-      "purchases_per_lead": 1.463
+      "leads": 751,
+      "offers_made": 2401,
+      "leads_unfilled": 17,
+      "expected_purchases": 1163.0,
+      "purchases_per_lead": 1.549
     },
     {
       "strategy": "p_logreg",
       "k": 2,
       "capacity_scale": 1.0,
       "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 1451,
-      "leads_unfilled": 2,
-      "expected_purchases": 790.0,
-      "purchases_per_lead": 1.075
+      "leads": 751,
+      "offers_made": 1493,
+      "leads_unfilled": 1,
+      "expected_purchases": 849.0,
+      "purchases_per_lead": 1.13
     },
     {
       "strategy": "p_logreg",
       "k": 3,
       "capacity_scale": 1.0,
       "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 1975,
-      "leads_unfilled": 22,
-      "expected_purchases": 990.0,
-      "purchases_per_lead": 1.347
+      "leads": 751,
+      "offers_made": 2067,
+      "leads_unfilled": 10,
+      "expected_purchases": 1075.0,
+      "purchases_per_lead": 1.431
     },
     {
       "strategy": "p_logreg",
       "k": 4,
       "capacity_scale": 1.0,
       "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 2231,
-      "leads_unfilled": 43,
-      "expected_purchases": 1077.0,
-      "purchases_per_lead": 1.465
+      "leads": 751,
+      "offers_made": 2397,
+      "leads_unfilled": 18,
+      "expected_purchases": 1167.0,
+      "purchases_per_lead": 1.554
     },
     {
       "strategy": "p_logreg",
       "k": 3,
       "capacity_scale": 1.0,
       "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 1975,
-      "leads_unfilled": 22,
-      "expected_purchases": 990.0,
-      "purchases_per_lead": 1.347
+      "leads": 751,
+      "offers_made": 2067,
+      "leads_unfilled": 10,
+      "expected_purchases": 1075.0,
+      "purchases_per_lead": 1.431
     },
     {
       "strategy": "p_logreg",
       "k": 3,
       "capacity_scale": 1.0,
       "demand_scale": 1.1,
-      "leads": 808,
-      "offers_made": 1947,
-      "leads_unfilled": 68,
-      "expected_purchases": 965.0,
-      "purchases_per_lead": 1.194
+      "leads": 826,
+      "offers_made": 2011,
+      "leads_unfilled": 63,
+      "expected_purchases": 1018.0,
+      "purchases_per_lead": 1.232
     },
     {
       "strategy": "p_logreg",
       "k": 3,
       "capacity_scale": 1.0,
       "demand_scale": 1.25,
-      "leads": 918,
-      "offers_made": 2085,
-      "leads_unfilled": 102,
-      "expected_purchases": 1015.0,
-      "purchases_per_lead": 1.106
+      "leads": 938,
+      "offers_made": 2202,
+      "leads_unfilled": 86,
+      "expected_purchases": 1095.0,
+      "purchases_per_lead": 1.167
     },
     {
       "strategy": "p_logreg",
       "k": 3,
       "capacity_scale": 0.9,
       "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 1949,
-      "leads_unfilled": 28,
-      "expected_purchases": 980.0,
-      "purchases_per_lead": 1.333
+      "leads": 751,
+      "offers_made": 2035,
+      "leads_unfilled": 19,
+      "expected_purchases": 1058.0,
+      "purchases_per_lead": 1.409
     },
     {
       "strategy": "p_logreg",
       "k": 3,
       "capacity_scale": 0.9,
       "demand_scale": 1.1,
-      "leads": 808,
-      "offers_made": 1896,
-      "leads_unfilled": 77,
-      "expected_purchases": 941.0,
-      "purchases_per_lead": 1.165
+      "leads": 826,
+      "offers_made": 1967,
+      "leads_unfilled": 76,
+      "expected_purchases": 991.0,
+      "purchases_per_lead": 1.2
     },
     {
       "strategy": "p_logreg",
       "k": 3,
       "capacity_scale": 0.9,
       "demand_scale": 1.25,
-      "leads": 918,
-      "offers_made": 2025,
-      "leads_unfilled": 107,
-      "expected_purchases": 986.0,
-      "purchases_per_lead": 1.074
-    },
-    {
-      "strategy": "p_logreg",
-      "k": 3,
-      "capacity_scale": 0.75,
-      "demand_scale": 1.0,
-      "leads": 735,
-      "offers_made": 1841,
-      "leads_unfilled": 41,
-      "expected_purchases": 913.0,
-      "purchases_per_lead": 1.242
-    },
-    {
-      "strategy": "p_logreg",
-      "k": 3,
-      "capacity_scale": 0.75,
-      "demand_scale": 1.1,
-      "leads": 808,
-      "offers_made": 1760,
+      "leads": 938,
+      "offers_made": 2138,
       "leads_unfilled": 103,
-      "expected_purchases": 864.0,
-      "purchases_per_lead": 1.069
+      "expected_purchases": 1065.0,
+      "purchases_per_lead": 1.135
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 0.75,
+      "demand_scale": 1.0,
+      "leads": 751,
+      "offers_made": 1929,
+      "leads_unfilled": 38,
+      "expected_purchases": 981.0,
+      "purchases_per_lead": 1.306
+    },
+    {
+      "strategy": "p_logreg",
+      "k": 3,
+      "capacity_scale": 0.75,
+      "demand_scale": 1.1,
+      "leads": 826,
+      "offers_made": 1829,
+      "leads_unfilled": 101,
+      "expected_purchases": 910.0,
+      "purchases_per_lead": 1.102
     },
     {
       "strategy": "p_logreg",
       "k": 3,
       "capacity_scale": 0.75,
       "demand_scale": 1.25,
-      "leads": 918,
-      "offers_made": 1857,
-      "leads_unfilled": 151,
-      "expected_purchases": 899.0,
-      "purchases_per_lead": 0.979
+      "leads": 938,
+      "offers_made": 1968,
+      "leads_unfilled": 136,
+      "expected_purchases": 961.0,
+      "purchases_per_lead": 1.025
     }
   ],
   "monitoring_psi": {
-    "distance_km": 0.0028,
-    "availability_overlap": 0.0051,
-    "price_gap_pos": 0.0019,
+    "distance_km": 0.0033,
+    "availability_overlap": 0.0001,
+    "price_gap_pos": 0.0023,
     "price_missing": 0.0,
     "has_credit": 0.0,
-    "credit_balance_log": 0.0023,
+    "credit_balance_log": 0.002,
     "urgent": 0.0,
     "emergency": 0.0,
     "lang_match": 0.0,
     "gender_pref_met": 0.0,
-    "rating_f": 0.0029,
-    "years_exp_cap": 0.0012,
+    "rating_f": 0.0016,
+    "years_exp_cap": 0.0009,
     "is_apprentice": 0.0,
-    "hist_purchase_rate": 0.0404,
-    "tenure_days_log": 0.3437,
-    "hours_wanted": 0.0042,
-    "score_logreg": 0.0031
+    "hist_purchase_rate": 0.0771,
+    "tenure_days_log": 0.3588,
+    "hours_wanted": 0.0024,
+    "score_logreg": 0.0051
   }
 }

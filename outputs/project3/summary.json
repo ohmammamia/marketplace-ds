@@ -1,299 +1,321 @@
 {
+  "validation": {
+    "providers_raw": {
+      "errors": 0,
+      "warnings": 1
+    },
+    "leads_raw": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "offers_raw": {
+      "errors": 1,
+      "warnings": 0
+    },
+    "providers_clean": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "offers_clean": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
   "instance": {
     "week": "2026-01-19",
-    "leads": 164,
+    "leads": 149,
     "providers": 220,
-    "feasible_pairs": 5387,
-    "total_capacity": 635,
-    "priority_leads": 73,
-    "demand_vs_capacity": 0.7748031496062993
+    "feasible_pairs": 5562,
+    "total_capacity": 692,
+    "priority_leads": 65,
+    "demand_vs_capacity": 0.6459537572254336
   },
   "solver_comparison": [
     {
       "solver": "greedy",
-      "quality": 250.146,
-      "unfilled_penalty": 7.0,
-      "fairness_penalty": 5.1,
-      "distance_penalty": 8.804,
-      "objective": 229.241,
-      "leads_unfilled": 4,
-      "leads_below_min": 6,
-      "providers_with_zero": 17,
-      "notifications": 462,
-      "mean_q": 0.541,
-      "capacity_utilisation": 0.728,
-      "expected_purchases": 250.146,
-      "gini_provider_load": 0.369,
+      "quality": 264.494,
+      "unfilled_penalty": 2.0,
+      "fairness_penalty": 9.6,
+      "distance_penalty": 8.83,
+      "objective": 244.064,
+      "leads_unfilled": 0,
+      "leads_below_min": 2,
+      "providers_with_zero": 32,
+      "notifications": 438,
+      "mean_q": 0.604,
+      "capacity_utilisation": 0.633,
+      "expected_purchases": 264.494,
+      "gini_provider_load": 0.409,
       "solver_status": NaN
     },
     {
       "solver": "milp",
-      "quality": 278.626,
+      "quality": 281.552,
       "unfilled_penalty": 0.0,
-      "fairness_penalty": 0.0,
-      "distance_penalty": 6.153,
-      "objective": 272.473,
+      "fairness_penalty": 0.6,
+      "distance_penalty": 6.324,
+      "objective": 274.628,
       "leads_unfilled": 0,
       "leads_below_min": 0,
-      "providers_with_zero": 0,
-      "notifications": 487,
-      "mean_q": 0.572,
-      "capacity_utilisation": 0.767,
-      "expected_purchases": 278.626,
-      "gini_provider_load": 0.324,
+      "providers_with_zero": 2,
+      "notifications": 445,
+      "mean_q": 0.633,
+      "capacity_utilisation": 0.643,
+      "expected_purchases": 281.552,
+      "gini_provider_load": 0.333,
       "solver_status": "Optimal"
     }
   ],
   "fairness_tradeoff": [
     {
       "lambda_fairness": 0.0,
-      "quality": 279.374,
+      "quality": 283.606,
       "unfilled_penalty": 0.0,
       "fairness_penalty": 0.0,
-      "distance_penalty": 6.015,
-      "objective": 273.36,
+      "distance_penalty": 6.233,
+      "objective": 277.373,
       "leads_unfilled": 0,
       "leads_below_min": 0,
-      "providers_with_zero": 12,
-      "notifications": 487,
-      "mean_q": 0.574,
-      "capacity_utilisation": 0.767,
-      "expected_purchases": 279.374,
-      "gini_provider_load": 0.348
+      "providers_with_zero": 30,
+      "notifications": 445,
+      "mean_q": 0.637,
+      "capacity_utilisation": 0.643,
+      "expected_purchases": 283.606,
+      "gini_provider_load": 0.405
     },
     {
       "lambda_fairness": 0.1,
-      "quality": 279.147,
+      "quality": 282.965,
       "unfilled_penalty": 0.0,
-      "fairness_penalty": 0.5,
-      "distance_penalty": 5.975,
-      "objective": 272.672,
+      "fairness_penalty": 1.1,
+      "distance_penalty": 6.304,
+      "objective": 275.561,
       "leads_unfilled": 0,
       "leads_below_min": 0,
-      "providers_with_zero": 5,
-      "notifications": 487,
-      "mean_q": 0.573,
-      "capacity_utilisation": 0.767,
-      "expected_purchases": 279.147,
-      "gini_provider_load": 0.335
+      "providers_with_zero": 11,
+      "notifications": 445,
+      "mean_q": 0.636,
+      "capacity_utilisation": 0.643,
+      "expected_purchases": 282.965,
+      "gini_provider_load": 0.358
     },
     {
       "lambda_fairness": 0.3,
-      "quality": 278.626,
+      "quality": 281.552,
       "unfilled_penalty": 0.0,
-      "fairness_penalty": 0.0,
-      "distance_penalty": 6.153,
-      "objective": 272.473,
+      "fairness_penalty": 0.6,
+      "distance_penalty": 6.324,
+      "objective": 274.628,
       "leads_unfilled": 0,
       "leads_below_min": 0,
-      "providers_with_zero": 0,
-      "notifications": 487,
-      "mean_q": 0.572,
-      "capacity_utilisation": 0.767,
-      "expected_purchases": 278.626,
-      "gini_provider_load": 0.324
+      "providers_with_zero": 2,
+      "notifications": 445,
+      "mean_q": 0.633,
+      "capacity_utilisation": 0.643,
+      "expected_purchases": 281.552,
+      "gini_provider_load": 0.333
     },
     {
       "lambda_fairness": 0.6,
-      "quality": 278.626,
+      "quality": 281.227,
       "unfilled_penalty": 0.0,
-      "fairness_penalty": 0.0,
-      "distance_penalty": 6.153,
-      "objective": 272.473,
+      "fairness_penalty": 0.6,
+      "distance_penalty": 6.351,
+      "objective": 274.277,
       "leads_unfilled": 0,
       "leads_below_min": 0,
-      "providers_with_zero": 0,
-      "notifications": 487,
-      "mean_q": 0.572,
-      "capacity_utilisation": 0.767,
-      "expected_purchases": 278.626,
-      "gini_provider_load": 0.324
+      "providers_with_zero": 1,
+      "notifications": 445,
+      "mean_q": 0.632,
+      "capacity_utilisation": 0.643,
+      "expected_purchases": 281.227,
+      "gini_provider_load": 0.33
     },
     {
       "lambda_fairness": 1.0,
-      "quality": 278.626,
+      "quality": 281.227,
       "unfilled_penalty": 0.0,
-      "fairness_penalty": 0.0,
-      "distance_penalty": 6.153,
-      "objective": 272.473,
+      "fairness_penalty": 1.0,
+      "distance_penalty": 6.351,
+      "objective": 273.877,
       "leads_unfilled": 0,
       "leads_below_min": 0,
-      "providers_with_zero": 0,
-      "notifications": 487,
-      "mean_q": 0.572,
-      "capacity_utilisation": 0.767,
-      "expected_purchases": 278.626,
-      "gini_provider_load": 0.324
+      "providers_with_zero": 1,
+      "notifications": 445,
+      "mean_q": 0.632,
+      "capacity_utilisation": 0.643,
+      "expected_purchases": 281.227,
+      "gini_provider_load": 0.33
     },
     {
       "lambda_fairness": 2.0,
-      "quality": 278.626,
+      "quality": 281.227,
       "unfilled_penalty": 0.0,
-      "fairness_penalty": 0.0,
-      "distance_penalty": 6.153,
-      "objective": 272.473,
+      "fairness_penalty": 2.0,
+      "distance_penalty": 6.351,
+      "objective": 272.877,
       "leads_unfilled": 0,
       "leads_below_min": 0,
-      "providers_with_zero": 0,
-      "notifications": 487,
-      "mean_q": 0.572,
-      "capacity_utilisation": 0.767,
-      "expected_purchases": 278.626,
-      "gini_provider_load": 0.324
+      "providers_with_zero": 1,
+      "notifications": 445,
+      "mean_q": 0.632,
+      "capacity_utilisation": 0.643,
+      "expected_purchases": 281.227,
+      "gini_provider_load": 0.33
     }
   ],
   "constraint_analysis": [
     {
       "relaxation": "none",
-      "expected_purchases": 278.626,
+      "expected_purchases": 281.552,
       "gain": 0.0,
-      "binding_share": 0.727
+      "binding_share": 0.568
     },
     {
       "relaxation": "capacity +1 per provider",
-      "expected_purchases": 292.847,
-      "gain": 14.221,
+      "expected_purchases": 290.53,
+      "gain": 8.978,
       "binding_share": NaN
     },
     {
       "relaxation": "max offers per lead +1",
-      "expected_purchases": 327.322,
-      "gain": 48.696,
+      "expected_purchases": 348.863,
+      "gain": 67.311,
       "binding_share": NaN
     },
     {
       "relaxation": "priority min offers 2\u21921",
-      "expected_purchases": 278.626,
+      "expected_purchases": 281.552,
       "gain": 0.0,
       "binding_share": NaN
     },
     {
       "relaxation": "ignore distance penalty",
-      "expected_purchases": 278.981,
-      "gain": 0.355,
+      "expected_purchases": 281.886,
+      "gain": 0.334,
       "binding_share": NaN
     }
   ],
   "scenarios": [
     {
       "scenario": "baseline",
-      "leads": 164,
-      "capacity": 635,
+      "leads": 149,
+      "capacity": 692,
       "status": "Optimal",
-      "milp_expected_purchases": 278.626,
-      "greedy_expected_purchases": 250.146,
+      "milp_expected_purchases": 281.552,
+      "greedy_expected_purchases": 264.494,
       "milp_leads_unfilled": 0,
-      "greedy_leads_unfilled": 4,
+      "greedy_leads_unfilled": 0,
       "milp_below_min": 0,
-      "utilisation": 0.767,
-      "share_capacity_binding": 0.727
+      "utilisation": 0.643,
+      "share_capacity_binding": 0.568
     },
     {
       "scenario": "demand_plus_10",
-      "leads": 180,
-      "capacity": 635,
+      "leads": 163,
+      "capacity": 692,
       "status": "Optimal",
-      "milp_expected_purchases": 278.715,
-      "greedy_expected_purchases": 250.321,
+      "milp_expected_purchases": 297.864,
+      "greedy_expected_purchases": 272.806,
       "milp_leads_unfilled": 0,
-      "greedy_leads_unfilled": 14,
+      "greedy_leads_unfilled": 4,
       "milp_below_min": 0,
-      "utilisation": 0.8,
-      "share_capacity_binding": 0.773
+      "utilisation": 0.697,
+      "share_capacity_binding": 0.636
     },
     {
       "scenario": "demand_plus_25",
-      "leads": 205,
-      "capacity": 635,
+      "leads": 186,
+      "capacity": 692,
       "status": "Optimal",
-      "milp_expected_purchases": 301.611,
-      "greedy_expected_purchases": 266.877,
+      "milp_expected_purchases": 329.691,
+      "greedy_expected_purchases": 296.805,
       "milp_leads_unfilled": 0,
-      "greedy_leads_unfilled": 19,
+      "greedy_leads_unfilled": 8,
       "milp_below_min": 0,
-      "utilisation": 0.877,
-      "share_capacity_binding": 0.855
+      "utilisation": 0.789,
+      "share_capacity_binding": 0.736
     },
     {
       "scenario": "capacity_minus_10",
-      "leads": 164,
-      "capacity": 594,
+      "leads": 149,
+      "capacity": 641,
       "status": "Optimal",
-      "milp_expected_purchases": 275.545,
-      "greedy_expected_purchases": 245.604,
+      "milp_expected_purchases": 279.322,
+      "greedy_expected_purchases": 259.671,
       "milp_leads_unfilled": 0,
-      "greedy_leads_unfilled": 5,
+      "greedy_leads_unfilled": 0,
       "milp_below_min": 0,
-      "utilisation": 0.815,
-      "share_capacity_binding": 0.759
+      "utilisation": 0.694,
+      "share_capacity_binding": 0.618
     },
     {
       "scenario": "capacity_minus_25",
-      "leads": 164,
-      "capacity": 507,
+      "leads": 149,
+      "capacity": 550,
       "status": "Optimal",
-      "milp_expected_purchases": 260.981,
-      "greedy_expected_purchases": 227.48,
+      "milp_expected_purchases": 271.238,
+      "greedy_expected_purchases": 245.235,
       "milp_leads_unfilled": 0,
-      "greedy_leads_unfilled": 7,
+      "greedy_leads_unfilled": 1,
       "milp_below_min": 0,
-      "utilisation": 0.921,
-      "share_capacity_binding": 0.9
+      "utilisation": 0.809,
+      "share_capacity_binding": 0.773
     },
     {
       "scenario": "max_distance_5km",
-      "leads": 164,
-      "capacity": 635,
+      "leads": 149,
+      "capacity": 692,
       "status": "Optimal",
-      "milp_expected_purchases": 275.015,
-      "greedy_expected_purchases": 250.146,
+      "milp_expected_purchases": 275.286,
+      "greedy_expected_purchases": 256.643,
       "milp_leads_unfilled": 1,
       "greedy_leads_unfilled": 4,
       "milp_below_min": 2,
-      "utilisation": 0.745,
-      "share_capacity_binding": 0.691
+      "utilisation": 0.623,
+      "share_capacity_binding": 0.55
     },
     {
       "scenario": "quiet_week",
-      "leads": 126,
-      "capacity": 635,
+      "leads": 118,
+      "capacity": 692,
       "status": "Optimal",
-      "milp_expected_purchases": 220.271,
-      "greedy_expected_purchases": 209.587,
+      "milp_expected_purchases": 226.615,
+      "greedy_expected_purchases": 223.012,
       "milp_leads_unfilled": 0,
-      "greedy_leads_unfilled": 2,
-      "milp_below_min": 0,
-      "utilisation": 0.578,
-      "share_capacity_binding": 0.491
+      "greedy_leads_unfilled": 1,
+      "milp_below_min": 1,
+      "utilisation": 0.504,
+      "share_capacity_binding": 0.4
     }
   ],
   "robustness": [
     {
       "sigma": 0.02,
-      "assignment_jaccard": 0.731,
-      "regret_pct": 0.391
+      "assignment_jaccard": 0.681,
+      "regret_pct": 0.473
     },
     {
       "sigma": 0.05,
-      "assignment_jaccard": 0.559,
-      "regret_pct": 2.329
+      "assignment_jaccard": 0.489,
+      "regret_pct": 2.633
     },
     {
       "sigma": 0.1,
-      "assignment_jaccard": 0.403,
-      "regret_pct": 7.54
+      "assignment_jaccard": 0.349,
+      "regret_pct": 8.251
     }
   ],
   "decision_output": {
-    "notifications": 487,
+    "notifications": 445,
     "unfilled_leads": 0,
     "solver": {
       "status": "Optimal",
-      "objective": 272.4729035240416,
-      "n_binary": 5387,
-      "binding_capacity_providers": 160,
-      "share_capacity_binding": 0.7272727272727273,
-      "leads_at_max_offers": 161
+      "objective": 274.6275152048172,
+      "n_binary": 5562,
+      "binding_capacity_providers": 125,
+      "share_capacity_binding": 0.5681818181818182,
+      "leads_at_max_offers": 147
     }
   }
 }

@@ -22,7 +22,10 @@ def load_quality_model(path: str):
 
 def build(data_dir: str, week_start: str, model_path: str, M: int = 3, weights: dict | None = None,
           demand_scale: float = 1.0, capacity_scale: float = 1.0, seed: int = 0) -> Instance:
-    ins, leads, offers, _ = p1data.clean(*p1data.load(data_dir))
+    """Input validation runs inside `p1data.clean`, which raises on any error
+    in the cleaned frames. The reports are kept on the instance so the pipeline
+    can publish them as an artefact rather than discarding the evidence."""
+    ins, leads, offers, reports = p1data.clean(*p1data.load(data_dir))
     ws = pd.Timestamp(week_start)
     wk = leads[(leads.created_at >= ws) & (leads.created_at < ws + pd.Timedelta(days=7))].copy()
     if demand_scale != 1.0:
@@ -31,7 +34,11 @@ def build(data_dir: str, week_start: str, model_path: str, M: int = 3, weights: 
     ins = ins.copy()
     ins["weekly_lead_capacity"] = (ins.weekly_lead_capacity * capacity_scale).round().astype(int)
     model = load_quality_model(model_path)
-    prior, med_price = offers.purchased.mean(), ins.price_per_hour.median()
+    # scoring week `ws` must not see offers from `ws` onwards: taking the prior
+    # from the whole table let future weeks inform the current allocation
+    prior = features.prevailing_prior(offers, ws)
+    joined = ins[ins.joined_at < ws]
+    med_price = (joined if len(joined) else ins).price_per_hour.median()
     hist = features.provider_history(offers, ws, prior)
     rows = []
     for _, ld in wk.iterrows():
@@ -44,4 +51,5 @@ def build(data_dir: str, week_start: str, model_path: str, M: int = 3, weights: 
     pairs = pd.concat(rows, ignore_index=True)
     log.info("week %s: %d leads, %d providers, %d feasible pairs", ws.date(), len(wk), len(ins), len(pairs))
     return Instance(leads=wk.reset_index(drop=True), providers=ins.reset_index(drop=True), pairs=pairs, M=M,
-                    weights=weights or Instance.__dataclass_fields__["weights"].default_factory())
+                    weights=weights or Instance.__dataclass_fields__["weights"].default_factory(),
+                    validation=reports)

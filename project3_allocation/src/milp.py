@@ -8,10 +8,10 @@ import pandas as pd
 from .formulation import Instance
 
 
-def solve(inst: Instance, time_limit: int = 60, extra_max_distance: float | None = None) -> tuple[pd.DataFrame, dict]:
+def solve(inst: Instance, time_limit: int = 60) -> tuple[pd.DataFrame, dict]:
+    # A distance cap is applied by `formulation.restrict_distance` before the
+    # instance reaches any solver, so `inst.pairs` is already the feasible set E.
     pairs = inst.pairs
-    if extra_max_distance is not None:
-        pairs = pairs[pairs.distance_km <= extra_max_distance]
     w = inst.weights
     dmax = float(pairs.distance_km.max() or 1)
     prob = pulp.LpProblem("lead_allocation", pulp.LpMaximize)

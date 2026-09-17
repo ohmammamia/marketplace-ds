@@ -47,9 +47,12 @@ praise about tidy, well-finished work. First target for the next review batch.
 ## Emerging-issue detection
 A category is emerging if its recent count exceeds what its baseline *share* would predict
 at current total volume (so a marketing push lifting everything is not "emerging") by a
-rate ratio ≥1.5 with a one-sided Poisson p < 0.05. On demo data `credits_refund` is
-flagged (ratio 2.6, p < 0.001); the transient app-bug incident is not, because it lies in
-the baseline window — by design, the method finds *current* growth.
+rate ratio ≥1.5 with a Benjamini-Hochberg q < 0.05. One test runs per category, so raw
+p-values are not usable as-is: at eight categories, an uncorrected 0.05 threshold gives a
+~34% chance of at least one false flag. BH controls the false-discovery rate across the
+family instead. On demo data `credits_refund` is flagged (ratio 2.39, p = 0.0001,
+q = 0.0008); the transient app-bug incident is not, because it lies in the baseline
+window — by design, the method finds *current* growth.
 
 ## Prioritisation
 `priority = share × severity × growth × confidence`, multiplicative so no axis can be

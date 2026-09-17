@@ -54,7 +54,7 @@ def run(cfg: dict) -> dict:
     contrib = ranker.logreg_contributions(models["logreg"], test)
     summary["global_importance"] = contrib.abs().mean().sort_values(ascending=False).round(3).to_dict()
     lid = test.lead_id.iloc[0]
-    ex = test[test.lead_id == lid].sort_values("p_logreg", ascending=False).head(K)
+    ex = evaluation.order_by_score(test[test.lead_id == lid], "p_logreg").head(K)
     ex_expl = contrib.loc[ex.index].round(2)
     ex_expl.insert(0, "provider_id", ex.provider_id.values); ex_expl.insert(1, "p_purchase", ex.p_logreg.round(3).values)
     ex_expl.to_csv(f"{out}/example_explanation_{lid}.csv", index=False)
@@ -73,7 +73,7 @@ def run(cfg: dict) -> dict:
         "ndcg_full_history": res["p_logreg"][f"ndcg@{K}"],
         "ndcg_with_20pct_cold": evaluation.ranking_metrics(tc, "p_logreg_cold", target, K)[f"ndcg@{K}"],
         "cold_exposure_ratio": float(
-            (tc.sort_values("p_logreg_cold", ascending=False).groupby("lead_id").head(K).provider_id.isin(new_ids).mean())
+            (evaluation.order_by_score(tc, "p_logreg_cold").groupby("lead_id").head(K).provider_id.isin(new_ids).mean())
             / m_new.mean()),
         "policy": "new providers score with the prior purchase rate (empirical-Bayes shrinkage), so they are neither buried nor over-promoted; "
                   "an explicit exploration slot (1 of K for providers with <10 offers) is recommended in docs/methodology.md",

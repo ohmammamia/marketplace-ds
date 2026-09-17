@@ -1,9 +1,9 @@
 topic,top_terms,mapped_category,overlap,doc_share
-0,"time, happened, didn, time happened, second, second time, hour, just",provider_no_show,1,0.48940998487140697
-1,"way actually, actually makes, worth, things, explains, explains things, makes, makes sense",workmanship_quality,1,0.039334341906202726
-2,"explained, finished, ahead time, finished ahead, really thorough, clearly finished, explained clearly, clearly",workmanship_quality,2,0.07261724659606657
-3,"availability calendar, changes close, calendar, calendar doesn, close, doesn, doesn changes, changes",NEW/uncovered,0,0.023449319213313162
-4,"android keeps, keeps sending, screen, start, loop android, loop, login loop, login",NEW/uncovered,0,0.023449319213313162
-5,"zones save, update coverage, greyed, zones, coverage zones, coverage, save, save button",app_bug,3,0.060514372163388806
-6,"lead, paid, paid lead, lead apparently, apparently heard, apparently, heard, disconnected",lead_quality,2,0.0907715582450832
-7,"twice, filled, site, customer, filled details, heard site, details, details twice",lead_quality,1,0.2004538577912254
+0,"time, happened, time happened, second, second time, hour, days, month",app_bug,1,0.4267175572519084
+1,"new profile, uploaded new, photo shows, uploaded, photo, new, profile photo, shows",NEW/uncovered,0,0.051908396946564885
+2,"hours, arrive hours, miss, hours late, late miss, arrive, notifications arrive, miss leads",provider_no_show,1,0.06870229007633588
+3,"filled, twice, site, site active, active, details, filled details, details twice",NEW/uncovered,0,0.17786259541984734
+4,"worth, makes sense, makes, explains, explains things, sense worth, way, things way",workmanship_quality,1,0.04045801526717557
+5,"lead, paid lead, paid, apparently, lead apparently, apparently heard, heard, number",provider_communication,1,0.15801526717557252
+6,"android, android keeps, login loop, login, loop, loop android, sending start, sending",NEW/uncovered,0,0.020610687022900764
+7,"update, save, zones save, update coverage, coverage, coverage zones, save button, button greyed",app_bug,3,0.055725190839694655
